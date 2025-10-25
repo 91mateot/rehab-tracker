@@ -11,9 +11,7 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
-    :root {
-      --sidebar-width: 260px;
-    }
+    :root { --sidebar-width: 260px; }
     body { background: #0f172a; color: #e2e8f0; }
     .sidebar { width: var(--sidebar-width); background: #111827; position: fixed; inset: 0 auto 0 0; padding: 1rem; }
     .brand { font-weight: 700; letter-spacing: .5px; }
@@ -49,9 +47,11 @@
       <a class="nav-link" href="#/data"><i class="bi bi-table me-2"></i>Data</a>
       <a class="nav-link" href="#/settings"><i class="bi bi-gear me-2"></i>Settings</a>
       <a class="nav-link" href="#/about"><i class="bi bi-info-circle me-2"></i>About</a>
-          <a class=\"nav-link\" href=\"#/plan\"><i class=\"bi bi-journal-richtext me-2\"></i>Plan & Packet</a>\n    </nav>\n    <div class=\"mt-auto footer\">
-      <div>CoreUI‑style • Bootstrap 5 • Chart.js</div>
-      <div class="small">Local‑only by default. Optional CSV import.</div>
+      <a class="nav-link" href="#/plan"><i class="bi bi-journal-richtext me-2"></i>Plan & Packet</a>
+    </nav>
+    <div class="mt-auto footer">
+      <div>CoreUI-style • Bootstrap 5 • Chart.js</div>
+      <div class="small">Local-only by default. Optional CSV import.</div>
     </div>
   </aside>
 
@@ -88,7 +88,7 @@
                 <div class="row g-3">
                   <div class="col-12 col-lg-4">
                     <div class="card p-3 h-100">
-                      <h6>Low‑Back Pain (0–10)</h6>
+                      <h6>Low-Back Pain (0–10)</h6>
                       <div class="row g-2">
                         <div class="col"><input id="lbBefore" type="number" min="0" max="10" class="form-control" placeholder="Before"></div>
                         <div class="col"><input id="lbDuring" type="number" min="0" max="10" class="form-control" placeholder="During"></div>
@@ -241,21 +241,175 @@
     <div id="view-about" class="view d-none">
       <div class="card p-3">
         <h6>About</h6>
-        <p class="text-secondary">This is a CoreUI‑style Bootstrap 5 dashboard tailored for post‑microdiscectomy rehab tracking and snowboard preparation. It supports chat‑logged entries (which you can copy here) and optional CSV import from Google Sheets. Built with accessibility and mobile use in mind.</p>
+        <p class="text-secondary">This is a CoreUI-style Bootstrap 5 dashboard tailored for post-microdiscectomy rehab tracking and snowboard preparation. It supports chat-logged entries (which you can copy here) and optional CSV import from Google Sheets. Built with accessibility and mobile use in mind.</p>
         <ul class="text-secondary small">
-          <li>Fields tracked: date, session type, duration, low‑back pain (before/during/after), right leg/glute/hamstring symptoms (before/during/after), sitting tolerance (surface & minutes), completion, notes.</li>
+          <li>Fields tracked: date, session type, duration, low-back pain (before/during/after), right leg/glute/hamstring symptoms (before/during/after), sitting tolerance (surface & minutes), completion, notes.</li>
           <li>Charts: Back pain (after), Leg symptoms (after), Sitting tolerance minutes, Completion rate.</li>
           <li>Data: Stored locally in your browser; export CSV/JSON anytime.</li>
         </ul>
       </div>
     </div>
-      <div id=\"view-plan\" class=\"view d-none\">\n      <div class=\"row g-3\">\n        <div class=\"col-12 col-xl-8\">\n          <div class=\"card p-3\">\n            <h5 class=\"mb-2\">Snowboard Recovery + Performance Plan</h5>\n            <p class=\"text-secondary small mb-3\">Narrative sessions tailored for post L4/L5 microdiscectomy and return to all-mountain snowboarding. Use this as your day-by-day guide. (You can also attach a PDF link below.)</p>\n\n            <div class=\"accordion\" id=\"planAccordion\">\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h1\"><button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c1\">Day 1 — Mobility + Core Stabilization</button></h2>\n                <div id=\"c1\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <strong>Purpose:</strong> Reset stiffness, reinforce neutral lumbar control, prep tissues.\n                    <ul>\n                      <li><em>Warm-up:</em> 5–10 min easy walk/bike focusing on tall posture.</li>\n                      <li><em>Mobility:</em> Kneeling hip flexor stretch 2×30s/side; Hamstring stretch 2×30s/side; Thoracic rotations 2×8/side.</li>\n                      <li><em>Core:</em> Dead bug 3×10–12; Bird-dog 3×8–10/side; Front plank 3×30–45s; Side plank 2×20–30s/side.</li>\n                      <li><em>Nerve glides:</em> Gentle sciatic sliders (pain-free range) 2×10/side.</li>\n                      <li><em>Cool-down:</em> Light stretch; diaphragmatic breathing.</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Cues: rib cage stacked over pelvis; avoid end-range lumbar flexion.</div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h2\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c2\">Day 2 — Lower-Body Strength (Glute/Ham emphasis)</button></h2>\n                <div id=\"c2\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <strong>Purpose:</strong> Build hip-dominant strength with minimal lumbar load.\n                    <ul>\n                      <li>Glute bridge 3×12–15</li>\n                      <li>Split squat (BW or light DBs) 3×8–10/leg</li>\n                      <li>DB Romanian deadlift (light–moderate) 3×8–10 — hinge at hips, spine neutral</li>\n                      <li>Step-ups 3×8/leg</li>\n                      <li>Hamstring curl (machine/Swiss ball) 3×10–12</li>\n                      <li>Pallof press 2–3×8/side</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Progress load only if symptoms stay ≤2/10 for 24–48h post-session.</div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h3\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c3\">Day 3 — Active Recovery + Sitting Tolerance</button></h2>\n                <div id=\"c3\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <ul>\n                      <li>20–30 min easy walk.</li>\n                      <li>Posture practice: lumbar roll, hips slightly higher than knees; micro-break every 20 min.</li>\n                      <li>Seated tall-spine holds 2–3×1 min; hip-hinge practice 2×10.</li>\n                      <li>SMR: glutes/hamstrings as tolerated.</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Goal: add 2–3 min to comfortable sitting time each week (esp. soft couch).</div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h4\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c4\">Day 4 — Upper-Body + Trunk Rotation (controlled)</button></h2>\n                <div id=\"c4\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <ul>\n                      <li>DB bench press 3×8–12</li>\n                      <li>Lat pulldown or row 3×8–12</li>\n                      <li>DB shoulder press 3×8–10</li>\n                      <li>Push-ups 3×AMRAP (form-quality)</li>\n                      <li>Half-kneeling chop 3×8/side; light Russian twists 2–3×10–12/side</li>\n                      <li>Plank with alternating reach 2×20–30s</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Cues: rotate through thoracic spine/hips; keep lumbar neutral.</div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h5\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c5\">Day 5 — Power • Balance • Endurance (Snowboard‑prep)</button></h2>\n                <div id=\"c5\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <ul>\n                      <li>Single‑leg RDL (BW/light DB) 3×6–8/leg</li>\n                      <li>Lateral hops (soft landings) 3×10</li>\n                      <li>Optional small jumps 3×5–8 (only if symptom‑free)</li>\n                      <li>Balance pad/BOSU single‑leg stance 2×30s/leg with slight knee bend</li>\n                      <li>10–15 min continuous cardio (elliptical/bike/jog) maintaining neutral spine</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Goal: smooth landings, hip control, no increase in symptoms 24–48h later.</div>\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"accordion-item\">\n                <h2 class=\"accordion-header\" id=\"h6\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c6\">Optional Weekend — Yoga / Pilates / Mobility</button></h2>\n                <div id=\"c6\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">\n                  <div class=\"accordion-body\">\n                    <p><strong>Purpose:</strong> Recovery, breath, gentle end‑range exposure without lumbar aggravation.</p>\n                    <ul>\n                      <li><em>Yoga flow (20–40 min):</em> cat‑cow, child’s pose (hip‑hinge variant), low lunge, sphinx/cobra (tolerated), pigeon (gentle), thoracic openers.</li>\n                      <li><em>Pilates focus (20–30 min):</em> imprint/neutral drills, dead bug series, side‑lying leg work, swimming prep (prone extension light).</li>\n                      <li><em>Mobility:</em> hip flexor, hamstring, glute, adductor 2×30s each; breathing 3–5 min.</li>\n                    </ul>\n                    <div class=\"small text-secondary\">Skip if pain >3/10 or if prior day caused symptoms ↑. Choose one (yoga or Pilates) based on what leaves your back calmer afterward.</div>\n                  </div>
+
+    <!-- Plan & Packet -->
+    <div id="view-plan" class="view d-none">
+      <div class="row g-3">
+        <div class="col-12 col-xl-8">
+          <div class="card p-3">
+            <h5 class="mb-2">Snowboard Recovery + Performance Plan</h5>
+            <p class="text-secondary small mb-3">
+              Narrative sessions tailored for post L4/L5 microdiscectomy and return to all-mountain snowboarding.
+              Use this as your day-by-day guide. (You can also attach a PDF link below.)
+            </p>
+
+            <div class="accordion" id="planAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                    Day 1 — Mobility + Core Stabilization
+                  </button>
+                </h2>
+                <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <strong>Purpose:</strong> Reset stiffness, reinforce neutral lumbar control, prep tissues.
+                    <ul>
+                      <li><em>Warm-up:</em> 5–10 min easy walk/bike focusing on tall posture.</li>
+                      <li><em>Mobility:</em> Kneeling hip flexor stretch 2×30s/side; Hamstring stretch 2×30s/side; Thoracic rotations 2×8/side.</li>
+                      <li><em>Core:</em> Dead bug 3×10–12; Bird-dog 3×8–10/side; Front plank 3×30–45s; Side plank 2×20–30s/side.</li>
+                      <li><em>Nerve glides:</em> Gentle sciatic sliders (pain-free range) 2×10/side.</li>
+                      <li><em>Cool-down:</em> Light stretch; diaphragmatic breathing.</li>
+                    </ul>
+                    <div class="small text-secondary">Cues: rib cage stacked over pelvis; avoid end-range lumbar flexion.</div>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                    Day 2 — Lower-Body Strength (Glute/Ham emphasis)
+                  </button>
+                </h2>
+                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <strong>Purpose:</strong> Build hip-dominant strength with minimal lumbar load.
+                    <ul>
+                      <li>Glute bridge 3×12–15</li>
+                      <li>Split squat (BW or light DBs) 3×8–10/leg</li>
+                      <li>DB Romanian deadlift (light–moderate) 3×8–10 — hinge at hips, spine neutral</li>
+                      <li>Step-ups 3×8/leg</li>
+                      <li>Hamstring curl (machine/Swiss ball) 3×10–12</li>
+                      <li>Pallof press 2–3×8/side</li>
+                    </ul>
+                    <div class="small text-secondary">Progress load only if symptoms stay ≤2/10 for 24–48h post-session.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
+                    Day 3 — Active Recovery + Sitting Tolerance
+                  </button>
+                </h2>
+                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>20–30 min easy walk.</li>
+                      <li>Posture practice: lumbar roll, hips slightly higher than knees; micro-break every 20 min.</li>
+                      <li>Seated tall-spine holds 2–3×1 min; hip-hinge practice 2×10.</li>
+                      <li>SMR: glutes/hamstrings as tolerated.</li>
+                    </ul>
+                    <div class="small text-secondary">Goal: add 2–3 min to comfortable sitting time each week (esp. soft couch).</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">
+                    Day 4 — Upper-Body + Trunk Rotation (controlled)
+                  </button>
+                </h2>
+                <div id="c4" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>DB bench press 3×8–12</li>
+                      <li>Lat pulldown or row 3×8–12</li>
+                      <li>DB shoulder press 3×8–10</li>
+                      <li>Push-ups 3×AMRAP (form-quality)</li>
+                      <li>Half-kneeling chop 3×8/side; light Russian twists 2–3×10–12/side</li>
+                      <li>Plank with alternating reach 2×20–30s</li>
+                    </ul>
+                    <div class="small text-secondary">Cues: rotate through thoracic spine/hips; keep lumbar neutral.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">
+                    Day 5 — Power • Balance • Endurance (Snowboard-prep)
+                  </button>
+                </h2>
+                <div id="c5" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Single-leg RDL (BW/light DB) 3×6–8/leg</li>
+                      <li>Lateral hops (soft landings) 3×10</li>
+                      <li>Optional small jumps 3×5–8 (only if symptom-free)</li>
+                      <li>Balance pad/BOSU single-leg stance 2×30s/leg with slight knee bend</li>
+                      <li>10–15 min continuous cardio (elliptical/bike/jog) maintaining neutral spine</li>
+                    </ul>
+                    <div class="small text-secondary">Goal: smooth landings, hip control, no increase in symptoms 24–48h later.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h6">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6">
+                    Optional Weekend — Yoga / Pilates / Mobility
+                  </button>
+                </h2>
+                <div id="c6" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
+                  <div class="accordion-body">
+                    <p><strong>Purpose:</strong> Recovery, breath, gentle end-range exposure without lumbar aggravation.</p>
+                    <ul>
+                      <li><em>Yoga flow (20–40 min):</em> cat-cow, child’s pose (hip-hinge variant), low lunge, sphinx/cobra (tolerated), pigeon (gentle), thoracic openers.</li>
+                      <li><em>Pilates focus (20–30 min):</em> imprint/neutral drills, dead bug series, side-lying leg work, swimming prep (prone extension light).</li>
+                      <li><em>Mobility:</em> hip flexor, hamstring, glute, adductor 2×30s each; breathing 3–5 min.</li>
+                    </ul>
+                    <div class="small text-secondary">Skip if pain &gt;3/10 or if prior day caused symptoms ↑. Choose one (yoga or Pilates) based on what leaves your back calmer afterward.</div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /accordion -->
           </div>
         </div>
-        <div class=\"col-12 col-xl-4\">\n          <div class=\"card p-3 mb-3\">\n            <h6 class=\"mb-2\">Exercise Library (quick links)</h6>\n            <ul class=\"small m-0\">\n              <li>Glute bridge — <a href=\"https://www.youtube.com/watch?v=OUgsJ8-Vi0E\" target=\"_blank\">YouTube</a></li>\n              <li>Pallof press — <a href=\"https://www.youtube.com/watch?v=5_8d8vHgZvU\" target=\"_blank\">YouTube</a></li>\n              <li>Split squat — <a href=\"https://www.youtube.com/watch?v=SGHnCftrZkA\" target=\"_blank\">YouTube</a></li>\n              <li>Single‑leg RDL — <a href=\"https://www.youtube.com/watch?v=Zfr6wizR8rs\" target=\"_blank\">YouTube</a></li>\n            </ul>\n          </div>\n          <div class=\"card p-3\">\n            <h6 class=\"mb-2\">Attach Packet PDF (optional)</h6>\n            <p class=\"small text-secondary mb-2\">Paste a public link to your PDF packet. It will appear below as a button.</p>\n            <input id=\"packetUrl\" class=\"form-control mb-2\" placeholder=\"https://.../Snowboard_Rehab_Tracker_Packet.pdf\" />\n            <button id=\"savePacket\" class=\"btn btn-outline-info btn-sm\"><i class=\"bi bi-link-45deg me-1\"></i>Save Packet Link</button>\n            <div id=\"packetLinkWrap\" class=\"mt-3\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n\n  <script>
+
+        <div class="col-12 col-xl-4">
+          <div class="card p-3 mb-3">
+            <h6 class="mb-2">Exercise Library (quick links)</h6>
+            <ul class="small m-0">
+              <li>Glute bridge — <a href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank">YouTube</a></li>
+              <li>Pallof press — <a href="https://www.youtube.com/watch?v=5_8d8vHgZvU" target="_blank">YouTube</a></li>
+              <li>Split squat — <a href="https://www.youtube.com/watch?v=SGHnCftrZkA" target="_blank">YouTube</a></li>
+              <li>Single-leg RDL — <a href="https://www.youtube.com/watch?v=Zfr6wizR8rs" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+          <div class="card p-3">
+            <h6 class="mb-2">Attach Packet PDF (optional)</h6>
+            <p class="small text-secondary mb-2">Paste a public link to your PDF packet. It will appear below as a button.</p>
+            <input id="packetUrl" class="form-control mb-2" placeholder="https://.../Snowboard_Rehab_Tracker_Packet.pdf" />
+            <button id="savePacket" class="btn btn-outline-info btn-sm"><i class="bi bi-link-45deg me-1"></i>Save Packet Link</button>
+            <div id="packetLinkWrap" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
     // --- Utilities ---
     const $$ = sel => document.querySelector(sel);
     const $$$ = sel => [...document.querySelectorAll(sel)];
@@ -282,14 +436,9 @@
     function toNumber(v){ const n = Number(v); return isNaN(n)? null : n; }
 
     function dedupeAndSort(list){
-      // de-dupe by date+type
       const map = new Map();
-      list.forEach(e => {
-        const key = `${e.date}|${e.sessionType}`;
-        map.set(key, e); // last write wins
-      });
-      const arr = [...map.values()].sort((a,b)=> a.date.localeCompare(b.date));
-      return arr;
+      list.forEach(e => { const key = `${e.date}|${e.sessionType}`; map.set(key, e); });
+      return [...map.values()].sort((a,b)=> a.date.localeCompare(b.date));
     }
 
     function csvEscape(v){ if(v==null) return ''; const s = String(v).replaceAll('"','""'); return `"${s}"`; }
@@ -318,13 +467,10 @@
       const idx = (name)=> headers.indexOf(name);
       const out = [];
       lines.forEach(line=>{
-        // naive CSV split (handles quoted with commas by regex)
         const cols = line.match(/("[^"]*("{2}[^"]*)*"|[^,]*)/g)?.filter((_,i)=>true) || [];
         const get = (name)=> {
           const i = idx(name); if(i<0 || i>=cols.length) return '';
-          let v = cols[i] || '';
-          v = v.replace(/^"|"$/g,'').replace(/""/g,'"');
-          return v;
+          let v = cols[i] || ''; v = v.replace(/^"|"$/g,'').replace(/""/g,'"'); return v;
         };
         out.push({
           date: get('date') || get('Date'),
@@ -360,7 +506,6 @@
       if(route.startsWith('#/data')) renderTable();
       if(route.startsWith('#/log')) updateQuickStats();
     }
-
     window.addEventListener('hashchange', ()=> setActive(location.hash));
 
     // --- Form handling ---
@@ -393,7 +538,7 @@
       $$('#quickStats').innerHTML = `
         <div><strong>Last:</strong> ${last.date} • ${last.sessionType}</div>
         <div>Avg Back Pain (after): <strong>${avgLB}</strong></div>
-        <div>Avg Right‑Leg Symptoms (after): <strong>${avgLeg}</strong></div>
+        <div>Avg Right-Leg Symptoms (after): <strong>${avgLeg}</strong></div>
         <div>Avg Sitting Tolerance (min): <strong>${avgSit}</strong></div>
       `;
     }
@@ -415,9 +560,7 @@
       chartBack = new Chart($$('#chartBack'), { type:'line', data:{ labels, datasets:[{ label:'Back Pain (after)', data: backAfter }] }});
       chartLeg = new Chart($$('#chartLeg'), { type:'line', data:{ labels, datasets:[{ label:'Leg Symptoms (after)', data: legAfter }] }});
       chartSit = new Chart($$('#chartSit'), { type:'bar', data:{ labels, datasets:[{ label:'Sitting Tolerance (min)', data: sit }] }});
-      chartCompletion = new Chart($$('#chartCompletion'), {
-        type:'doughnut', data:{ labels:Object.keys(compMap), datasets:[{ data:Object.values(compMap) }] }
-      });
+      chartCompletion = new Chart($$('#chartCompletion'), { type:'doughnut', data:{ labels:Object.keys(compMap), datasets:[{ data:Object.values(compMap) }] }});
     }
 
     // --- Table ---
@@ -439,11 +582,9 @@
 
     // --- Init ---
     window.addEventListener('DOMContentLoaded', ()=>{
-      // Defaults
       $$('#todayStr').innerText = new Date().toLocaleDateString();
       $$('#date').value = todayISO();
 
-      // Routing
       setActive(location.hash);
 
       // Handlers
@@ -453,8 +594,7 @@
         if(!entry.date) return alert('Please select a date');
         const merged = dedupeAndSort([...loadEntries(), entry]);
         saveEntries(merged);
-        updateQuickStats();
-        renderTable();
+        updateQuickStats(); renderTable();
         alert('Saved!');
       });
 
@@ -468,7 +608,9 @@
       });
 
       $$('#clearAll').addEventListener('click', ()=>{
-        if(confirm('Clear all locally stored entries?')){ saveEntries([]); renderTable(); updateQuickStats(); destroyCharts(); alert('Cleared.'); }
+        if(confirm('Clear all locally stored entries?')){
+          saveEntries([]); renderTable(); updateQuickStats(); destroyCharts(); alert('Cleared.');
+        }
       });
 
       $$('#downloadJson').addEventListener('click', ()=>{
@@ -531,56 +673,6 @@
         btn.innerHTML = '<i class="bi bi-file-earmark-pdf me-1"></i>Open Packet PDF';
         $$('#packetLinkWrap').appendChild(btn);
         alert('Packet link saved');
-      });
-    });
-
-      $$('#exportCsv').addEventListener('click', ()=>{
-        const csv = toCSV(loadEntries());
-        const blob = new Blob([csv], {type:'text/csv'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'rehab_entries.csv'; a.click();
-        URL.revokeObjectURL(url);
-      });
-
-      $$('#clearAll').addEventListener('click', ()=>{
-        if(confirm('Clear all locally stored entries?')){ saveEntries([]); renderTable(); updateQuickStats(); destroyCharts(); alert('Cleared.'); }
-      });
-
-      $$('#downloadJson').addEventListener('click', ()=>{
-        const data = JSON.stringify(loadEntries(), null, 2);
-        const blob = new Blob([data], {type:'application/json'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'rehab_entries.json'; a.click();
-        URL.revokeObjectURL(url);
-      });
-
-      $$('#importCsv').addEventListener('click', async ()=>{
-        const url = $$('#csvUrl').value.trim();
-        if(!url) return alert('Paste a CSV URL.');
-        try{
-          const rows = await fetchCSV(url);
-          const merged = dedupeAndSort([ ...loadEntries(), ...rows ]);
-          saveEntries(merged);
-          updateQuickStats(); renderTable(); renderCharts();
-          alert(`Imported ${rows.length} rows.`);
-        }catch(err){ console.error(err); alert('Import failed. Check URL and CORS.'); }
-      });
-
-      $$('#resetCsv').addEventListener('click', ()=>{ $$('#csvUrl').value=''; alert('CSV source cleared (no effect on local data).'); });
-
-      const s = loadSettings();
-      if(s.pain!=null) $$('#thPain').value = s.pain;
-      if(s.sit!=null) $$('#thSit').value = s.sit;
-      $$('#saveSettings').addEventListener('click', ()=>{
-        saveSettings({ pain: toNumber($$('#thPain').value), sit: toNumber($$('#thSit').value) });
-        alert('Settings saved');
-      });
-      $$('#resetSettings').addEventListener('click', ()=>{
-        localStorage.removeItem(SETTINGS_KEY);
-        $$('#thPain').value=''; $$('#thSit').value='';
-        alert('Settings reset');
       });
     });
   </script>
