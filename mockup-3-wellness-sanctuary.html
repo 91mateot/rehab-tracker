@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wellness Sanctuary - Rehab Tracker Mockup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #F5F1E8 0%, #E9E5DC 100%);
+      color: #3D4635;
+      line-height: 1.7;
+    }
+    .header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(163, 177, 138, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #5F9EA0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+    .theme-info {
+      background: linear-gradient(135deg, rgba(163, 177, 138, 0.3) 0%, rgba(212, 167, 116, 0.3) 100%);
+      backdrop-filter: blur(10px);
+      padding: 4rem 3rem;
+      border-radius: 32px;
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 2px solid rgba(163, 177, 138, 0.2);
+    }
+    .theme-info h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+      color: #3D4635;
+      letter-spacing: 2px;
+    }
+    .theme-info p {
+      font-size: 1.15rem;
+      color: #5F7552;
+      font-weight: 400;
+    }
+    .palette {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .palette-item {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+    .palette-color {
+      height: 90px;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .palette-item small { font-size: 0.85rem; color: #5F7552; }
+    .section {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 32px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(163, 177, 138, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: #5F9EA0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(163, 177, 138, 0.12);
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(163, 177, 138, 0.2);
+    }
+    .card h3 {
+      color: #5F9EA0;
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .metric {
+      font-size: 3rem;
+      font-weight: 300;
+      color: #3D4635;
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.9rem;
+      color: #5F7552;
+      margin-top: 0.75rem;
+    }
+    .btn {
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #A3B18A 0%, #7FA167 100%);
+      color: white;
+      box-shadow: 0 8px 24px rgba(163, 177, 138, 0.3);
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(163, 177, 138, 0.4);
+    }
+    .btn-secondary {
+      background: linear-gradient(135deg, #D4A574 0%, #C69565 100%);
+      color: white;
+      box-shadow: 0 8px 24px rgba(212, 167, 116, 0.3);
+    }
+    .btn-secondary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(212, 167, 116, 0.4);
+    }
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      color: #5F7552;
+      font-size: 0.95rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid rgba(163, 177, 138, 0.3);
+      border-radius: 20px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      color: #3D4635;
+      transition: all 0.3s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #A3B18A;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(163, 177, 138, 0.1);
+    }
+    .progress-bar {
+      background: rgba(163, 177, 138, 0.15);
+      height: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+    .progress-fill {
+      background: linear-gradient(90deg, #A3B18A 0%, #D4A574 100%);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.6s ease;
+      box-shadow: 0 2px 8px rgba(163, 177, 138, 0.3);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .badge-success { background: rgba(163, 177, 138, 0.3); color: #5F7552; }
+    .badge-info { background: rgba(95, 158, 160, 0.3); color: #3D6B6D; }
+    .icon { font-size: 2.5rem; color: #A3B18A; margin-bottom: 1rem; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <i class="bi bi-flower1"></i>
+      <span>Wellness Sanctuary</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="theme-info">
+      <h1>Wellness Sanctuary</h1>
+      <p>Calm • Peaceful • Nurturing • Restorative</p>
+    </div>
+
+    <div class="section">
+      <h2>Color Harmony</h2>
+      <div class="palette">
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #A3B18A 0%, #7FA167 100%);"></div>
+          <strong>Soft Sage</strong><br>
+          <small>#A3B18A</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #D4A574 0%, #C69565 100%);"></div>
+          <strong>Warm Terracotta</strong><br>
+          <small>#D4A574</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #5F9EA0 0%, #4A8184 100%);"></div>
+          <strong>Muted Teal</strong><br>
+          <small>#5F9EA0</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #E9E5DC 0%, #D8D4CB 100%);"></div>
+          <strong>Warm Cream</strong><br>
+          <small>#E9E5DC</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Your Healing Journey</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-heart-pulse icon"></i>
+          <h3>Back Comfort</h3>
+          <div class="metric">2.4</div>
+          <div class="metric-label">gentle progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 76%;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <i class="bi bi-clock-history icon"></i>
+          <h3>Sitting Ease</h3>
+          <div class="metric">45m</div>
+          <div class="metric-label">mindful comfort</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <i class="bi bi-stars icon"></i>
+          <h3>This Week</h3>
+          <div class="metric">5/5</div>
+          <div class="metric-label">beautiful dedication</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Record Your Practice</h2>
+      <div style="max-width: 600px;">
+        <div class="form-group">
+          <label class="form-label">Today's Date</label>
+          <input type="date" class="form-control" value="2025-10-26">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Session Focus</label>
+          <select class="form-control">
+            <option>Gentle Mobility & Core</option>
+            <option>Mindful Strengthening</option>
+            <option>Restorative Movement</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Comfort Level (after practice)</label>
+          <input type="number" class="form-control" placeholder="0-10 scale" value="2">
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-primary">Save Session</button>
+          <button class="btn btn-secondary">View Progress</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Recent Sessions</h2>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem; background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 4px 16px rgba(163, 177, 138, 0.1);">
+          <div>
+            <strong style="font-size: 1.1rem; color: #5F9EA0;">Mindful Strengthening</strong>
+            <div style="color: #5F7552; font-size: 0.9rem; margin-top: 0.5rem;">October 25 · 45 minutes of gentle care</div>
+          </div>
+          <span class="badge badge-success">Completed</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem; background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 4px 16px rgba(163, 177, 138, 0.1);">
+          <div>
+            <strong style="font-size: 1.1rem; color: #5F9EA0;">Gentle Mobility & Core</strong>
+            <div style="color: #5F7552; font-size: 0.9rem; margin-top: 0.5rem;">October 24 · 30 minutes of mindful movement</div>
+          </div>
+          <span class="badge badge-success">Completed</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem; background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 4px 16px rgba(163, 177, 138, 0.1);">
+          <div>
+            <strong style="font-size: 1.1rem; color: #5F9EA0;">Restorative Movement</strong>
+            <div style="color: #5F7552; font-size: 0.9rem; margin-top: 0.5rem;">October 23 · 25 minutes of nurturing practice</div>
+          </div>
+          <span class="badge badge-info">Adapted</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="text-align: center; background: rgba(163, 177, 138, 0.1);">
+      <i class="bi bi-flower2" style="font-size: 3rem; color: #A3B18A; margin-bottom: 1rem;"></i>
+      <h3 style="color: #5F9EA0; margin-bottom: 1rem; font-weight: 400; font-size: 1.5rem;">Nurture Your Recovery</h3>
+      <p style="color: #5F7552; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+        Soft, calming colors and rounded edges create a peaceful sanctuary for your healing journey.
+        Every element breathes tranquility, encouraging mindful recovery and self-compassion.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

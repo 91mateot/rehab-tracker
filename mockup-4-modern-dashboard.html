@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Dashboard - Rehab Tracker Mockup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000000;
+      color: #FFFFFF;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .header {
+      background: rgba(17, 17, 17, 0.6);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #06B6D4 0%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -1px;
+    }
+    .theme-info {
+      background: rgba(17, 17, 17, 0.5);
+      backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4rem 3rem;
+      border-radius: 24px;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .theme-info::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(6, 182, 212, 0.1), transparent 30%);
+      animation: rotate 8s linear infinite;
+    }
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+    .theme-info h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+      position: relative;
+      z-index: 1;
+    }
+    .theme-info p {
+      font-size: 1.25rem;
+      opacity: 0.7;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 1px;
+    }
+    .palette {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .palette-item {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+    }
+    .palette-color {
+      height: 120px;
+      border-radius: 16px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .palette-color::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1));
+    }
+    .palette-item small { font-size: 0.85rem; color: #666; font-weight: 600; font-family: monospace; }
+    .section {
+      background: rgba(17, 17, 17, 0.4);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 2.5rem;
+      border-radius: 24px;
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #06B6D4 0%, #A855F7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: rgba(17, 17, 17, 0.6);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #06B6D4, #A855F7);
+    }
+    .card:hover {
+      border-color: rgba(6, 182, 212, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2);
+    }
+    .card h3 {
+      color: #06B6D4;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .metric {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #FFFFFF 0%, #999999 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+    .metric-label {
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+      color: white;
+      box-shadow: 0 10px 40px rgba(6, 182, 212, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 50px rgba(6, 182, 212, 0.5);
+      border-color: rgba(6, 182, 212, 0.5);
+    }
+    .btn-secondary {
+      background: linear-gradient(135deg, #A855F7 0%, #9333EA 100%);
+      color: white;
+      box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 50px rgba(168, 85, 247, 0.5);
+      border-color: rgba(168, 85, 247, 0.5);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: #999;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-size: 1rem;
+      background: rgba(17, 17, 17, 0.6);
+      color: #FFFFFF;
+      backdrop-filter: blur(10px);
+      font-weight: 500;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #06B6D4;
+      box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);
+      background: rgba(17, 17, 17, 0.8);
+    }
+    .progress-bar {
+      background: rgba(255, 255, 255, 0.05);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+      background: linear-gradient(90deg, #06B6D4 0%, #22C55E 100%);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid;
+    }
+    .badge-success {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22C55E;
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    .badge-info {
+      background: rgba(6, 182, 212, 0.2);
+      color: #06B6D4;
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <i class="bi bi-cpu"></i>
+        <span>REHABTRACK</span>
+      </div>
+    </div>
+
+    <div class="theme-info">
+      <h1>Modern Dashboard</h1>
+      <p>DATA-DRIVEN • SOPHISTICATED • CUTTING-EDGE</p>
+    </div>
+
+    <div class="section">
+      <h2>Color System</h2>
+      <div class="palette">
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);"></div>
+          <strong style="color: #06B6D4;">Neon Cyan</strong><br>
+          <small>#06B6D4</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #A855F7 0%, #9333EA 100%);"></div>
+          <strong style="color: #A855F7;">Electric Purple</strong><br>
+          <small>#A855F7</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);"></div>
+          <strong style="color: #22C55E;">Bright Green</strong><br>
+          <small>#22C55E</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #111827 0%, #000000 100%); border-color: #333;"></div>
+          <strong style="color: #999;">Pure Black</strong><br>
+          <small>#000000</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Performance Metrics</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Pain Index</h3>
+          <div class="metric">2.4</div>
+          <div class="metric-label">7-day rolling average</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 76%;"></div>
+          </div>
+          <div style="font-size: 0.75rem; color: #22C55E; margin-top: 0.5rem;">
+            <i class="bi bi-arrow-down"></i> -24% vs last week
+          </div>
+        </div>
+        <div class="card">
+          <h3>Endurance</h3>
+          <div class="metric">45:00</div>
+          <div class="metric-label">sitting tolerance peak</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%;"></div>
+          </div>
+          <div style="font-size: 0.75rem; color: #22C55E; margin-top: 0.5rem;">
+            <i class="bi bi-arrow-up"></i> +12 min this week
+          </div>
+        </div>
+        <div class="card">
+          <h3>Compliance</h3>
+          <div class="metric">100%</div>
+          <div class="metric-label">session completion rate</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+          <div style="font-size: 0.75rem; color: #06B6D4; margin-top: 0.5rem;">
+            <i class="bi bi-graph-up"></i> 5-week streak
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Data Input</h2>
+      <div style="max-width: 600px;">
+        <div class="form-group">
+          <label class="form-label">Timestamp</label>
+          <input type="date" class="form-control" value="2025-10-26">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Protocol</label>
+          <select class="form-control">
+            <option>MOBILITY/CORE • Phase 1</option>
+            <option>STRENGTH/LOWER • Phase 2</option>
+            <option>POWER/BALANCE • Phase 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pain Level (0-10)</label>
+          <input type="number" class="form-control" placeholder="Enter value" value="2">
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-primary">Save Data</button>
+          <button class="btn btn-secondary">Analytics</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Activity Log</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(17, 17, 17, 0.6); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div>
+            <strong style="font-size: 1.05rem;">STRENGTH/LOWER • Phase 2</strong>
+            <div style="color: #666; font-size: 0.85rem; margin-top: 0.25rem; font-family: monospace;">
+              2025-10-25 18:42 • 45:00 • PAIN: 2/10
+            </div>
+          </div>
+          <span class="badge badge-success">Complete</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(17, 17, 17, 0.6); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div>
+            <strong style="font-size: 1.05rem;">MOBILITY/CORE • Phase 1</strong>
+            <div style="color: #666; font-size: 0.85rem; margin-top: 0.25rem; font-family: monospace;">
+              2025-10-24 07:15 • 30:00 • PAIN: 1/10
+            </div>
+          </div>
+          <span class="badge badge-success">Complete</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(17, 17, 17, 0.6); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div>
+            <strong style="font-size: 1.05rem;">POWER/BALANCE • Phase 3</strong>
+            <div style="color: #666; font-size: 0.85rem; margin-top: 0.25rem; font-family: monospace;">
+              2025-10-23 19:30 • 40:00 • PAIN: 3/10
+            </div>
+          </div>
+          <span class="badge badge-info">Modified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="text-align: center; border: 1px solid rgba(6, 182, 212, 0.2);">
+      <h3 style="color: #06B6D4; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; letter-spacing: -1px;">NEXT-GENERATION UI</h3>
+      <p style="color: #666; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+        Glassmorphism, grid overlays, and futuristic neon accents create a cutting-edge data dashboard.
+        Perfect for users who love tech aesthetics and detailed metrics visualization.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
