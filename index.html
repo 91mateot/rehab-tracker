@@ -49,9 +49,9 @@
       <a class="nav-link" href="#/data"><i class="bi bi-table me-2"></i>Data</a>
       <a class="nav-link" href="#/settings"><i class="bi bi-gear me-2"></i>Settings</a>
       <a class="nav-link" href="#/about"><i class="bi bi-info-circle me-2"></i>About</a>
-          <a class=\"nav-link\" href=\"#/plan\"><i class=\"bi bi-journal-richtext me-2\"></i>Plan & Packet</a>
+      <a class="nav-link" href="#/plan"><i class="bi bi-journal-richtext me-2"></i>Plan & Packet</a>
     </nav>
-    <div class=\"mt-auto footer\">
+    <div class="mt-auto footer">
       <div>CoreUI‑style • Bootstrap 5 • Chart.js</div>
       <div class="small">Local‑only by default. Optional CSV import.</div>
     </div>
@@ -647,56 +647,6 @@
         btn.innerHTML = '<i class="bi bi-file-earmark-pdf me-1"></i>Open Packet PDF';
         $$('#packetLinkWrap').appendChild(btn);
         alert('Packet link saved');
-      });
-    });
-
-      $$('#exportCsv').addEventListener('click', ()=>{
-        const csv = toCSV(loadEntries());
-        const blob = new Blob([csv], {type:'text/csv'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'rehab_entries.csv'; a.click();
-        URL.revokeObjectURL(url);
-      });
-
-      $$('#clearAll').addEventListener('click', ()=>{
-        if(confirm('Clear all locally stored entries?')){ saveEntries([]); renderTable(); updateQuickStats(); destroyCharts(); alert('Cleared.'); }
-      });
-
-      $$('#downloadJson').addEventListener('click', ()=>{
-        const data = JSON.stringify(loadEntries(), null, 2);
-        const blob = new Blob([data], {type:'application/json'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'rehab_entries.json'; a.click();
-        URL.revokeObjectURL(url);
-      });
-
-      $$('#importCsv').addEventListener('click', async ()=>{
-        const url = $$('#csvUrl').value.trim();
-        if(!url) return alert('Paste a CSV URL.');
-        try{
-          const rows = await fetchCSV(url);
-          const merged = dedupeAndSort([ ...loadEntries(), ...rows ]);
-          saveEntries(merged);
-          updateQuickStats(); renderTable(); renderCharts();
-          alert(`Imported ${rows.length} rows.`);
-        }catch(err){ console.error(err); alert('Import failed. Check URL and CORS.'); }
-      });
-
-      $$('#resetCsv').addEventListener('click', ()=>{ $$('#csvUrl').value=''; alert('CSV source cleared (no effect on local data).'); });
-
-      const s = loadSettings();
-      if(s.pain!=null) $$('#thPain').value = s.pain;
-      if(s.sit!=null) $$('#thSit').value = s.sit;
-      $$('#saveSettings').addEventListener('click', ()=>{
-        saveSettings({ pain: toNumber($$('#thPain').value), sit: toNumber($$('#thSit').value) });
-        alert('Settings saved');
-      });
-      $$('#resetSettings').addEventListener('click', ()=>{
-        localStorage.removeItem(SETTINGS_KEY);
-        $$('#thPain').value=''; $$('#thSit').value='';
-        alert('Settings reset');
       });
     });
   </script>
