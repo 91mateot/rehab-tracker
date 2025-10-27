@@ -13,328 +13,25 @@
   <style>
     :root {
       --sidebar-width: 260px;
-      --steel-blue: #4A5D7C;
-      --industrial-copper: #B87333;
-      --gunmetal: #586069;
-      --tactical-green: #6B8E76;
-      --iron-black: #0D1117;
-      --dark-bg: #161B22;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--iron-black);
-      color: #E6EDF3;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    /* Animated gradient background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(74, 93, 124, 0.12) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 40% 80%, rgba(88, 96, 105, 0.08) 0%, transparent 50%);
-      animation: gradientShift 15s ease infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes gradientShift {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-
-    /* Tech grid overlay */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image:
-        linear-gradient(rgba(88, 96, 105, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(88, 96, 105, 0.04) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Sidebar with glassmorphism */
-    .sidebar {
-      width: var(--sidebar-width);
-      background: rgba(22, 27, 34, 0.7);
-      backdrop-filter: blur(20px) saturate(150%);
-      border-right: 1px solid rgba(88, 96, 105, 0.25);
-      position: fixed;
-      inset: 0 auto 0 0;
-      padding: 1.5rem;
-      z-index: 100;
-      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .brand {
-      font-weight: 900;
-      letter-spacing: 1px;
-      font-size: 1.1rem;
-      background: linear-gradient(135deg, var(--steel-blue) 0%, var(--industrial-copper) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .content {
-      margin-left: var(--sidebar-width);
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Cards with glassmorphism */
-    .card {
-      background: linear-gradient(135deg, rgba(52, 71, 103, 0.1) 0%, rgba(184, 115, 51, 0.08) 100%);
-      backdrop-filter: blur(20px) saturate(150%);
-      border: 2px solid rgba(88, 96, 105, 0.25) !important;
-      border-radius: 16px !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--steel-blue) 0%, var(--industrial-copper) 100%);
-    }
-
-    /* Form controls */
-    .form-control, .form-select {
-      background: rgba(22, 27, 34, 0.8);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(88, 96, 105, 0.25);
-      color: #E6EDF3;
-      border-radius: 12px;
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-    }
-
-    .form-control:focus, .form-select:focus {
-      background: rgba(22, 27, 34, 0.9);
-      border-color: var(--steel-blue);
-      box-shadow: 0 0 0 4px rgba(74, 93, 124, 0.15);
-      color: #E6EDF3;
-    }
-
-    .form-control::placeholder {
-      color: #7D8590;
-    }
-
-    .form-label {
-      font-weight: 700;
-      color: #C9D1D9;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Navigation */
-    .nav-link {
-      color: #C9D1D9;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: all 0.3s;
-      margin-bottom: 0.5rem;
-    }
-
-    .nav-link:hover {
-      background: rgba(74, 93, 124, 0.15);
-      color: #E6EDF3;
-      transform: translateX(4px);
-    }
-
-    .nav-link.active {
-      background: linear-gradient(135deg, rgba(74, 93, 124, 0.25) 0%, rgba(184, 115, 51, 0.15) 100%) !important;
-      color: #E6EDF3 !important;
-      border-left: 3px solid var(--industrial-copper) !important;
-      box-shadow: 0 4px 16px rgba(74, 93, 124, 0.2);
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background: linear-gradient(135deg, var(--steel-blue) 0%, #344767 100%);
-      border: 2px solid var(--steel-blue);
-      color: white;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 12px;
-      padding: 0.75rem 1.5rem;
-      box-shadow: 0 8px 24px rgba(74, 93, 124, 0.25);
-      transition: all 0.3s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(74, 93, 124, 0.35);
-      background: linear-gradient(135deg, #5A6D8C 0%, #445777 100%);
-    }
-
-    .btn-outline-light {
-      border: 2px solid var(--gunmetal);
-      color: #C9D1D9;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 12px;
-      background: rgba(88, 96, 105, 0.1);
-      transition: all 0.3s;
-    }
-
-    .btn-outline-light:hover {
-      background: rgba(88, 96, 105, 0.25);
-      border-color: var(--steel-blue);
-      color: #E6EDF3;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-warning {
-      border: 2px solid var(--industrial-copper);
-      color: var(--industrial-copper);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 12px;
-      background: rgba(184, 115, 51, 0.1);
-      transition: all 0.3s;
-    }
-
-    .btn-outline-warning:hover {
-      background: rgba(184, 115, 51, 0.25);
-      color: var(--industrial-copper);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-info {
-      border: 2px solid var(--steel-blue);
-      color: var(--steel-blue);
-      font-weight: 700;
-      border-radius: 12px;
-      background: rgba(74, 93, 124, 0.1);
-      transition: all 0.3s;
-    }
-
-    .btn-outline-info:hover {
-      background: rgba(74, 93, 124, 0.25);
-      color: var(--steel-blue);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-secondary {
-      border: 2px solid var(--gunmetal);
-      color: #C9D1D9;
-      font-weight: 700;
-      border-radius: 12px;
-      background: rgba(88, 96, 105, 0.1);
-    }
-
-    .btn-outline-secondary:hover {
-      background: rgba(88, 96, 105, 0.25);
-      color: #E6EDF3;
-    }
-
-    /* Badges */
-    .badge-soft {
-      background: rgba(74, 93, 124, 0.2);
-      color: var(--steel-blue);
-      font-weight: 700;
-      border-radius: 8px;
-    }
-
-    /* Table */
-    .table {
-      color: #E6EDF3;
-    }
-
-    .table > :not(caption) > * > * {
-      background: transparent;
-      border-color: rgba(88, 96, 105, 0.2);
-    }
-
-    .table-responsive {
-      background: rgba(22, 27, 34, 0.4);
-      border-radius: 12px;
-      padding: 1rem;
-    }
-
-    /* Links */
-    a {
-      color: var(--steel-blue);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: var(--industrial-copper);
-    }
-
-    /* Footer */
-    .footer {
-      color: #7D8590;
-      font-size: 0.875rem;
-    }
-
-    /* Alerts */
-    .alert-warning {
-      background: rgba(184, 115, 51, 0.15);
-      border: 1px solid rgba(184, 115, 51, 0.3);
-      color: #C9D1D9;
-      border-radius: 12px;
-    }
-
-    /* Text colors */
-    .text-info {
-      color: var(--steel-blue) !important;
-    }
-
-    .text-secondary {
-      color: #7D8590 !important;
-    }
-
-    /* Borders */
-    .border-secondary {
-      border-color: rgba(88, 96, 105, 0.3) !important;
-    }
-
-    /* Headings */
-    h5, h6 {
-      color: #E6EDF3;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Responsive */
-    @media (max-width: 991px) {
-      .sidebar {
-        position: static;
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid rgba(88, 96, 105, 0.25);
-      }
-      .content {
-        margin-left: 0;
-      }
+    body { background: #0f172a; color: #e2e8f0; }
+    .sidebar { width: var(--sidebar-width); background: #111827; position: fixed; inset: 0 auto 0 0; padding: 1rem; }
+    .brand { font-weight: 700; letter-spacing: .5px; }
+    .content { margin-left: var(--sidebar-width); padding: 1.25rem; }
+    .card { background: #111827; border: 1px solid #1f2937; }
+    .form-control, .form-select { background: #0b1220; border-color: #233147; color: #e2e8f0; }
+    .form-control::placeholder { color: #94a3b8; }
+    .nav-link { color: #e2e8f0; }
+    .nav-link.active { background: #0b1220 !important; color: #f8fafc !important; border-color: #334155 !important; }
+    .badge-soft { background: rgba(148,163,184,.15); color: #cbd5e1; }
+    .table { color: #e2e8f0; }
+    .table > :not(caption) > * > * { background: transparent; }
+    a { color: #60a5fa; }
+    a:hover { color: #93c5fd; }
+    .footer { color: #94a3b8; font-size: .875rem; }
+    @media (max-width: 991px){
+      .sidebar { position: static; width: 100%; }
+      .content { margin-left: 0; }
     }
   </style>
 </head>
@@ -554,18 +251,18 @@
         </ul>
       </div>
     </div>
-    <div id="view-plan" class="view d-none">
-      <div class="row g-3">
-        <div class="col-12 col-xl-8">
-          <div class="card p-3">
-            <h5 class="mb-2">Snowboard Recovery + Performance Plan</h5>
-            <p class="text-secondary small mb-3">Narrative sessions tailored for post L4/L5 microdiscectomy and return to all-mountain snowboarding. Use this as your day-by-day guide. (You can also attach a PDF link below.)</p>
+      <div id=\"view-plan\" class=\"view d-none\">
+      <div class=\"row g-3\">
+        <div class=\"col-12 col-xl-8\">
+          <div class=\"card p-3\">
+            <h5 class=\"mb-2\">Snowboard Recovery + Performance Plan</h5>
+            <p class=\"text-secondary small mb-3\">Narrative sessions tailored for post L4/L5 microdiscectomy and return to all-mountain snowboarding. Use this as your day-by-day guide. (You can also attach a PDF link below.)</p>
 
-            <div class="accordion" id="planAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">Day 1 — Mobility + Core Stabilization</button></h2>
-                <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+            <div class=\"accordion\" id=\"planAccordion\">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h1\"><button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c1\">Day 1 — Mobility + Core Stabilization</button></h2>
+                <div id=\"c1\" class=\"accordion-collapse collapse show\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <strong>Purpose:</strong> Reset stiffness, reinforce neutral lumbar control, prep tissues.
                     <ul>
                       <li><em>Warm-up:</em> 5–10 min easy walk/bike focusing on tall posture.</li>
@@ -574,14 +271,14 @@
                       <li><em>Nerve glides:</em> Gentle sciatic sliders (pain-free range) 2×10/side.</li>
                       <li><em>Cool-down:</em> Light stretch; diaphragmatic breathing.</li>
                     </ul>
-                    <div class="small text-secondary">Cues: rib cage stacked over pelvis; avoid end-range lumbar flexion.</div>
+                    <div class=\"small text-secondary\">Cues: rib cage stacked over pelvis; avoid end-range lumbar flexion.</div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Day 2 — Lower-Body Strength (Glute/Ham emphasis)</button></h2>
-                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h2\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c2\">Day 2 — Lower-Body Strength (Glute/Ham emphasis)</button></h2>
+                <div id=\"c2\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <strong>Purpose:</strong> Build hip-dominant strength with minimal lumbar load.
                     <ul>
                       <li>Glute bridge 3×12–15</li>
@@ -591,28 +288,28 @@
                       <li>Hamstring curl (machine/Swiss ball) 3×10–12</li>
                       <li>Pallof press 2–3×8/side</li>
                     </ul>
-                    <div class="small text-secondary">Progress load only if symptoms stay ≤2/10 for 24–48h post-session.</div>
+                    <div class=\"small text-secondary\">Progress load only if symptoms stay ≤2/10 for 24–48h post-session.</div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">Day 3 — Active Recovery + Sitting Tolerance</button></h2>
-                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h3\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c3\">Day 3 — Active Recovery + Sitting Tolerance</button></h2>
+                <div id=\"c3\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <ul>
                       <li>20–30 min easy walk.</li>
                       <li>Posture practice: lumbar roll, hips slightly higher than knees; micro-break every 20 min.</li>
                       <li>Seated tall-spine holds 2–3×1 min; hip-hinge practice 2×10.</li>
                       <li>SMR: glutes/hamstrings as tolerated.</li>
                     </ul>
-                    <div class="small text-secondary">Goal: add 2–3 min to comfortable sitting time each week (esp. soft couch).</div>
+                    <div class=\"small text-secondary\">Goal: add 2–3 min to comfortable sitting time each week (esp. soft couch).</div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">Day 4 — Upper-Body + Trunk Rotation (controlled)</button></h2>
-                <div id="c4" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h4\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c4\">Day 4 — Upper-Body + Trunk Rotation (controlled)</button></h2>
+                <div id=\"c4\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <ul>
                       <li>DB bench press 3×8–12</li>
                       <li>Lat pulldown or row 3×8–12</li>
@@ -621,14 +318,14 @@
                       <li>Half-kneeling chop 3×8/side; light Russian twists 2–3×10–12/side</li>
                       <li>Plank with alternating reach 2×20–30s</li>
                     </ul>
-                    <div class="small text-secondary">Cues: rotate through thoracic spine/hips; keep lumbar neutral.</div>
+                    <div class=\"small text-secondary\">Cues: rotate through thoracic spine/hips; keep lumbar neutral.</div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">Day 5 — Power • Balance • Endurance (Snowboard‑prep)</button></h2>
-                <div id="c5" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h5\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c5\">Day 5 — Power • Balance • Endurance (Snowboard‑prep)</button></h2>
+                <div id=\"c5\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <ul>
                       <li>Single‑leg RDL (BW/light DB) 3×6–8/leg</li>
                       <li>Lateral hops (soft landings) 3×10</li>
@@ -636,80 +333,38 @@
                       <li>Balance pad/BOSU single‑leg stance 2×30s/leg with slight knee bend</li>
                       <li>10–15 min continuous cardio (elliptical/bike/jog) maintaining neutral spine</li>
                     </ul>
-                    <div class="small text-secondary">Goal: smooth landings, hip control, no increase in symptoms 24–48h later.</div>
+                    <div class=\"small text-secondary\">Goal: smooth landings, hip control, no increase in symptoms 24–48h later.</div>
                   </div>
                 </div>
               </div>
 
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="h6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6">Optional Weekend — Yoga / Pilates / Mobility</button></h2>
-                <div id="c6" class="accordion-collapse collapse" data-bs-parent="#planAccordion">
-                  <div class="accordion-body">
+              <div class=\"accordion-item\">
+                <h2 class=\"accordion-header\" id=\"h6\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#c6\">Optional Weekend — Yoga / Pilates / Mobility</button></h2>
+                <div id=\"c6\" class=\"accordion-collapse collapse\" data-bs-parent=\"#planAccordion\">
+                  <div class=\"accordion-body\">
                     <p><strong>Purpose:</strong> Recovery, breath, gentle end‑range exposure without lumbar aggravation.</p>
                     <ul>
-                      <li><em>Yoga flow (20–40 min):</em> cat‑cow, child's pose (hip‑hinge variant), low lunge, sphinx/cobra (tolerated), pigeon (gentle), thoracic openers.</li>
+                      <li><em>Yoga flow (20–40 min):</em> cat‑cow, child’s pose (hip‑hinge variant), low lunge, sphinx/cobra (tolerated), pigeon (gentle), thoracic openers.</li>
                       <li><em>Pilates focus (20–30 min):</em> imprint/neutral drills, dead bug series, side‑lying leg work, swimming prep (prone extension light).</li>
                       <li><em>Mobility:</em> hip flexor, hamstring, glute, adductor 2×30s each; breathing 3–5 min.</li>
                     </ul>
-                    <div class="small text-secondary">Skip if pain >3/10 or if prior day caused symptoms ↑. Choose one (yoga or Pilates) based on what leaves your back calmer afterward.</div>
+                    <div class=\"small text-secondary\">Skip if pain >3/10 or if prior day caused symptoms ↑. Choose one (yoga or Pilates) based on what leaves your back calmer afterward.</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-xl-4">
-          <div class="card p-3 mb-3">
-            <h6 class="mb-2">Exercise Library (quick links)</h6>
-            <ul class="small m-0">
-              <!-- Core stability -->
-              <li>Dead bug — <a href="https://www.youtube.com/results?search_query=dead+bug+exercise+tutorial" target="_blank">YouTube</a></li>
-              <li>Bird-dog — <a href="https://www.youtube.com/results?search_query=bird+dog+exercise+proper+form" target="_blank">YouTube</a></li>
-              <li>Front plank — <a href="https://www.youtube.com/results?search_query=front+plank+how+to" target="_blank">YouTube</a></li>
-              <li>Side plank — <a href="https://www.youtube.com/results?search_query=side+plank+proper+form" target="_blank">YouTube</a></li>
-              <li>Pallof press — <a href="https://www.youtube.com/watch?v=5_8d8vHgZvU" target="_blank">YouTube</a></li>
-              <li>Plank with alternating reach — <a href="https://www.youtube.com/results?search_query=plank+with+reach+exercise" target="_blank">YouTube</a></li>
-
-              <!-- Mobility & nerve -->
-              <li>Kneeling hip flexor stretch — <a href="https://www.youtube.com/results?search_query=kneeling+hip+flexor+stretch+cueing" target="_blank">YouTube</a></li>
-              <li>Hamstring stretch (banded or chair) — <a href="https://www.youtube.com/results?search_query=hamstring+stretch+banded+seated" target="_blank">YouTube</a></li>
-              <li>Thoracic rotations (open book) — <a href="https://www.youtube.com/results?search_query=open+book+thoracic+rotation+exercise" target="_blank">YouTube</a></li>
-              <li>Sciatic nerve glides (sliders) — <a href="https://www.youtube.com/results?search_query=sciatic+nerve+glide+slider+exercise" target="_blank">YouTube</a></li>
-              <li>Diaphragmatic breathing — <a href="https://www.youtube.com/results?search_query=diaphragmatic+breathing+how+to" target="_blank">YouTube</a></li>
-
-              <!-- Lower body strength (hip-dominant) -->
-              <li>Glute bridge — <a href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank">YouTube</a></li>
-              <li>Split squat — <a href="https://www.youtube.com/watch?v=SGHnCftrZkA" target="_blank">YouTube</a></li>
-              <li>Dumbbell Romanian deadlift — <a href="https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift+form" target="_blank">YouTube</a></li>
-              <li>Step-ups — <a href="https://www.youtube.com/results?search_query=step+up+exercise+proper+form" target="_blank">YouTube</a></li>
-              <li>Hamstring curl (Swiss ball or machine) — <a href="https://www.youtube.com/results?search_query=swiss+ball+hamstring+curl+exercise" target="_blank">YouTube</a></li>
-              <li>Single-leg RDL — <a href="https://www.youtube.com/watch?v=Zfr6wizR8rs" target="_blank">YouTube</a></li>
-
-              <!-- Power / balance (snowboard prep) -->
-              <li>Lateral hops (soft landings) — <a href="https://www.youtube.com/results?search_query=lateral+hops+plyometrics+soft+landing" target="_blank">YouTube</a></li>
-              <li>Low-amplitude jump & stick — <a href="https://www.youtube.com/results?search_query=jump+and+stick+landing+mechanics" target="_blank">YouTube</a></li>
-              <li>BOSU or pad single-leg balance — <a href="https://www.youtube.com/results?search_query=bosu+single+leg+balance+exercise" target="_blank">YouTube</a></li>
-              <li>Half-kneeling cable/band chop — <a href="https://www.youtube.com/results?search_query=half+kneeling+chop+exercise" target="_blank">YouTube</a></li>
-              <li>Light Russian twists — <a href="https://www.youtube.com/results?search_query=russian+twist+light+form" target="_blank">YouTube</a></li>
-
-              <!-- Weekend yoga / Pilates options -->
-              <li>Cat–cow — <a href="https://www.youtube.com/results?search_query=cat+cow+yoga+how+to" target="_blank">YouTube</a></li>
-              <li>Child's pose (hip-hinge variant) — <a href="https://www.youtube.com/results?search_query=child%27s+pose+hip+hinge+variant" target="_blank">YouTube</a></li>
-              <li>Low lunge — <a href="https://www.youtube.com/results?search_query=low+lunge+yoga+alignment" target="_blank">YouTube</a></li>
-              <li>Sphinx/Cobra (gentle) — <a href="https://www.youtube.com/results?search_query=sphinx+pose+gentle+cobra+yoga" target="_blank">YouTube</a></li>
-              <li>Pigeon (gentle) — <a href="https://www.youtube.com/results?search_query=pigeon+pose+gentle+modification" target="_blank">YouTube</a></li>
-              <li>Thoracic opener (thread the needle) — <a href="https://www.youtube.com/results?search_query=thread+the+needle+thoracic+mobility" target="_blank">YouTube</a></li>
-              <li>Pilates imprint/neutral — <a href="https://www.youtube.com/results?search_query=pilates+imprint+neutral+spine+exercise" target="_blank">YouTube</a></li>
-              <li>Side-lying leg series — <a href="https://www.youtube.com/results?search_query=pilates+side+lying+leg+series" target="_blank">YouTube</a></li>
-              <li>Prone "swimming" prep — <a href="https://www.youtube.com/results?search_query=pilates+swimming+prep+prone" target="_blank">YouTube</a></li>
-            </ul>
+        <div class=\"col-12 col-xl-4\">
+          <div class=\"card p-3 mb-3\">
+            <h6 class=\"mb-2\">Exercise Library (quick links)</h6>\n            <ul class=\"small m-0\">\n              <!-- Core stability -->\n              <li>Dead bug — <a href=\"https://www.youtube.com/results?search_query=dead+bug+exercise+tutorial\" target=\"_blank\">YouTube</a></li>\n              <li>Bird-dog — <a href=\"https://www.youtube.com/results?search_query=bird+dog+exercise+proper+form\" target=\"_blank\">YouTube</a></li>\n              <li>Front plank — <a href=\"https://www.youtube.com/results?search_query=front+plank+how+to\" target=\"_blank\">YouTube</a></li>\n              <li>Side plank — <a href=\"https://www.youtube.com/results?search_query=side+plank+proper+form\" target=\"_blank\">YouTube</a></li>\n              <li>Pallof press — <a href=\"https://www.youtube.com/watch?v=5_8d8vHgZvU\" target=\"_blank\">YouTube</a></li>\n              <li>Plank with alternating reach — <a href=\"https://www.youtube.com/results?search_query=plank+with+reach+exercise\" target=\"_blank\">YouTube</a></li>\n\n              <!-- Mobility & nerve -->\n              <li>Kneeling hip flexor stretch — <a href=\"https://www.youtube.com/results?search_query=kneeling+hip+flexor+stretch+cueing\" target=\"_blank\">YouTube</a></li>\n              <li>Hamstring stretch (banded or chair) — <a href=\"https://www.youtube.com/results?search_query=hamstring+stretch+banded+seated\" target=\"_blank\">YouTube</a></li>\n              <li>Thoracic rotations (open book) — <a href=\"https://www.youtube.com/results?search_query=open+book+thoracic+rotation+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Sciatic nerve glides (sliders) — <a href=\"https://www.youtube.com/results?search_query=sciatic+nerve+glide+slider+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Diaphragmatic breathing — <a href=\"https://www.youtube.com/results?search_query=diaphragmatic+breathing+how+to\" target=\"_blank\">YouTube</a></li>\n\n              <!-- Lower body strength (hip-dominant) -->\n              <li>Glute bridge — <a href=\"https://www.youtube.com/watch?v=OUgsJ8-Vi0E\" target=\"_blank\">YouTube</a></li>\n              <li>Split squat — <a href=\"https://www.youtube.com/watch?v=SGHnCftrZkA\" target=\"_blank\">YouTube</a></li>\n              <li>Dumbbell Romanian deadlift — <a href=\"https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift+form\" target=\"_blank\">YouTube</a></li>\n              <li>Step-ups — <a href=\"https://www.youtube.com/results?search_query=step+up+exercise+proper+form\" target=\"_blank\">YouTube</a></li>\n              <li>Hamstring curl (Swiss ball or machine) — <a href=\"https://www.youtube.com/results?search_query=swiss+ball+hamstring+curl+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Single-leg RDL — <a href=\"https://www.youtube.com/watch?v=Zfr6wizR8rs\" target=\"_blank\">YouTube</a></li>\n\n              <!-- Power / balance (snowboard prep) -->\n              <li>Lateral hops (soft landings) — <a href=\"https://www.youtube.com/results?search_query=lateral+hops+plyometrics+soft+landing\" target=\"_blank\">YouTube</a></li>\n              <li>Low-amplitude jump & stick — <a href=\"https://www.youtube.com/results?search_query=jump+and+stick+landing+mechanics\" target=\"_blank\">YouTube</a></li>\n              <li>BOSU or pad single-leg balance — <a href=\"https://www.youtube.com/results?search_query=bosu+single+leg+balance+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Half-kneeling cable/band chop — <a href=\"https://www.youtube.com/results?search_query=half+kneeling+chop+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Light Russian twists — <a href=\"https://www.youtube.com/results?search_query=russian+twist+light+form\" target=\"_blank\">YouTube</a></li>\n\n              <!-- Weekend yoga / Pilates options -->\n              <li>Cat–cow — <a href=\"https://www.youtube.com/results?search_query=cat+cow+yoga+how+to\" target=\"_blank\">YouTube</a></li>\n              <li>Child’s pose (hip-hinge variant) — <a href=\"https://www.youtube.com/results?search_query=child%27s+pose+hip+hinge+variant\" target=\"_blank\">YouTube</a></li>\n              <li>Low lunge — <a href=\"https://www.youtube.com/results?search_query=low+lunge+yoga+alignment\" target=\"_blank\">YouTube</a></li>\n              <li>Sphinx/Cobra (gentle) — <a href=\"https://www.youtube.com/results?search_query=sphinx+pose+gentle+cobra+yoga\" target=\"_blank\">YouTube</a></li>\n              <li>Pigeon (gentle) — <a href=\"https://www.youtube.com/results?search_query=pigeon+pose+gentle+modification\" target=\"_blank\">YouTube</a></li>\n              <li>Thoracic opener (thread the needle) — <a href=\"https://www.youtube.com/results?search_query=thread+the+needle+thoracic+mobility\" target=\"_blank\">YouTube</a></li>\n              <li>Pilates imprint/neutral — <a href=\"https://www.youtube.com/results?search_query=pilates+imprint+neutral+spine+exercise\" target=\"_blank\">YouTube</a></li>\n              <li>Side-lying leg series — <a href=\"https://www.youtube.com/results?search_query=pilates+side+lying+leg+series\" target=\"_blank\">YouTube</a></li>\n              <li>Prone “swimming” prep — <a href=\"https://www.youtube.com/results?search_query=pilates+swimming+prep+prone\" target=\"_blank\">YouTube</a></li>\n            </ul>
           </div>
-          <div class="card p-3">
-            <h6 class="mb-2">Attach Packet PDF (optional)</h6>
-            <p class="small text-secondary mb-2">Paste a public link to your PDF packet. It will appear below as a button.</p>
-            <input id="packetUrl" class="form-control mb-2" placeholder="https://.../Snowboard_Rehab_Tracker_Packet.pdf" />
-            <button id="savePacket" class="btn btn-outline-info btn-sm"><i class="bi bi-link-45deg me-1"></i>Save Packet Link</button>
-            <div id="packetLinkWrap" class="mt-3"></div>
+          <div class=\"card p-3\">
+            <h6 class=\"mb-2\">Attach Packet PDF (optional)</h6>
+            <p class=\"small text-secondary mb-2\">Paste a public link to your PDF packet. It will appear below as a button.</p>
+            <input id=\"packetUrl\" class=\"form-control mb-2\" placeholder=\"https://.../Snowboard_Rehab_Tracker_Packet.pdf\" />
+            <button id=\"savePacket\" class=\"btn btn-outline-info btn-sm\"><i class=\"bi bi-link-45deg me-1\"></i>Save Packet Link</button>
+            <div id=\"packetLinkWrap\" class=\"mt-3\"></div>
           </div>
         </div>
       </div>
