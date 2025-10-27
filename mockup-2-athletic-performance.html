@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Athletic Performance - Rehab Tracker Mockup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #E2E8F0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header .logo {
+      font-size: 1.75rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+    .theme-info {
+      background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);
+      padding: 4rem 3rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .theme-info::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .theme-info h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    .theme-info p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+      font-weight: 500;
+    }
+    .palette {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .palette-item {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+    .palette-color {
+      height: 100px;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+    .palette-item small { font-size: 0.85rem; color: #94A3B8; font-weight: 600; }
+    .section {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(249, 115, 22, 0.15) 100%);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3B82F6 0%, #F97316 100%);
+    }
+    .card h3 {
+      color: #3B82F6;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .metric {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #60A5FA 0%, #FB923C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.875rem;
+      color: #94A3B8;
+      margin-top: 0.75rem;
+      font-weight: 600;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+      color: white;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+    }
+    .btn-secondary {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      color: white;
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(249, 115, 22, 0.6);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      font-size: 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      color: #E2E8F0;
+      font-weight: 500;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    }
+    .progress-bar {
+      background: rgba(15, 23, 42, 0.8);
+      height: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 1rem 0;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 8px;
+      transition: width 0.3s;
+      background: linear-gradient(90deg, #3B82F6 0%, #F97316 100%);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-success { background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; }
+    .badge-info { background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); color: white; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <i class="bi bi-lightning-charge-fill"></i>
+      <span>REHABTRACKER</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="theme-info">
+      <h1>Athletic Performance</h1>
+      <p>Energetic • Motivating • Powerful • Dynamic</p>
+    </div>
+
+    <div class="section">
+      <h2>Color Palette</h2>
+      <div class="palette">
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);"></div>
+          <strong>Electric Blue</strong><br>
+          <small>#3B82F6</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);"></div>
+          <strong>Vibrant Orange</strong><br>
+          <small>#F97316</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #84CC16 0%, #65A30D 100%);"></div>
+          <strong>Energy Lime</strong><br>
+          <small>#84CC16</small>
+        </div>
+        <div class="palette-item">
+          <div class="palette-color" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);"></div>
+          <strong>Deep Navy</strong><br>
+          <small>#0F172A</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Performance Dashboard</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Pain Reduction</h3>
+          <div class="metric">-68%</div>
+          <div class="metric-label">From baseline</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 68%;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Sitting Power</h3>
+          <div class="metric">45min</div>
+          <div class="metric-label">New Record!</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Weekly Streak</h3>
+          <div class="metric">5/5</div>
+          <div class="metric-label">Perfect week</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Log Your Workout</h2>
+      <div style="max-width: 600px;">
+        <div class="form-group">
+          <label class="form-label">Workout Date</label>
+          <input type="date" class="form-control" value="2025-10-26">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Session Type</label>
+          <select class="form-control">
+            <option>🔥 Lower-Body Strength</option>
+            <option>💪 Mobility/Core</option>
+            <option>⚡ Power/Balance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pain Level</label>
+          <input type="number" class="form-control" placeholder="0-10" value="2">
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-primary">Save Workout</button>
+          <button class="btn btn-secondary">View Stats</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Recent Workouts</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
+          <div>
+            <strong style="font-size: 1.1rem;">🔥 Lower-Body Strength</strong>
+            <div style="color: #94A3B8; font-size: 0.875rem; margin-top: 0.25rem;">Oct 25 • 45 min • Pain: 2/10</div>
+          </div>
+          <span class="badge badge-success">Crushed It</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
+          <div>
+            <strong style="font-size: 1.1rem;">💪 Mobility/Core</strong>
+            <div style="color: #94A3B8; font-size: 0.875rem; margin-top: 0.25rem;">Oct 24 • 30 min • Pain: 1/10</div>
+          </div>
+          <span class="badge badge-success">Completed</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
+          <div>
+            <strong style="font-size: 1.1rem;">⚡ Power/Balance</strong>
+            <div style="color: #94A3B8; font-size: 0.875rem; margin-top: 0.25rem;">Oct 23 • 40 min • Pain: 3/10</div>
+          </div>
+          <span class="badge badge-info">Modified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="text-align: center;">
+      <h3 style="color: #3B82F6; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 900;">PUSH YOUR LIMITS</h3>
+      <p style="color: #94A3B8; max-width: 700px; margin: 0 auto; font-weight: 500;">
+        Bold gradients, dynamic animations, and high-energy design that motivates you to crush every workout.
+        Perfect for athletes who want their recovery tracker to match their competitive spirit.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

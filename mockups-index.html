@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rehab Tracker - Design Theme Mockups</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      color: #E2E8F0;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 3rem 2rem;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.25rem;
+      color: #94A3B8;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 2px solid rgba(96, 165, 250, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(96, 165, 250, 0.3);
+      border-color: rgba(96, 165, 250, 0.5);
+    }
+    .card-number {
+      font-size: 0.875rem;
+      color: #60A5FA;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .card-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .card-desc {
+      color: #94A3B8;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .card-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      background: rgba(96, 165, 250, 0.15);
+      color: #60A5FA;
+      padding: 0.375rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .card-preview {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+      color: white;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+    .card:hover .btn {
+      transform: translateX(5px);
+    }
+    .recommendation {
+      background: rgba(34, 197, 94, 0.1);
+      border: 2px solid rgba(34, 197, 94, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #22C55E;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Design Theme Mockups</h1>
+    <p class="subtitle">Choose the perfect style for your rehab tracker. Click any card to view the full mockup.</p>
+
+    <div class="grid">
+      <!-- 1. Clinical Wellness -->
+      <a href="mockup-1-clinical-wellness.html" class="card">
+        <div class="card-number">Option 1</div>
+        <h2 class="card-title">Clinical Wellness</h2>
+        <div class="card-preview" style="background: linear-gradient(135deg, #2563EB 0%, #14B8A6 100%);"></div>
+        <p class="card-desc">Professional, trustworthy medical design with clean aesthetics and calming colors.</p>
+        <div class="card-tags">
+          <span class="tag">Medical</span>
+          <span class="tag">Professional</span>
+          <span class="tag">Clean</span>
+          <span class="tag">Light Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 2. Athletic Performance -->
+      <a href="mockup-2-athletic-performance.html" class="card">
+        <div class="recommendation">🏆 Recommended</div>
+        <div class="card-number">Option 2</div>
+        <h2 class="card-title">Athletic Performance</h2>
+        <div class="card-preview" style="background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);"></div>
+        <p class="card-desc">Energetic, motivating design with bold gradients and dynamic animations for peak performance.</p>
+        <div class="card-tags">
+          <span class="tag">Energetic</span>
+          <span class="tag">Bold</span>
+          <span class="tag">Gradients</span>
+          <span class="tag">Dark Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 3. Wellness Sanctuary -->
+      <a href="mockup-3-wellness-sanctuary.html" class="card">
+        <div class="card-number">Option 3</div>
+        <h2 class="card-title">Wellness Sanctuary</h2>
+        <div class="card-preview" style="background: linear-gradient(135deg, #A3B18A 0%, #D4A574 100%);"></div>
+        <p class="card-desc">Calm, peaceful design with soft colors and rounded elements for mindful recovery.</p>
+        <div class="card-tags">
+          <span class="tag">Calming</span>
+          <span class="tag">Organic</span>
+          <span class="tag">Soft Colors</span>
+          <span class="tag">Light Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 4. Modern Dashboard -->
+      <a href="mockup-4-modern-dashboard.html" class="card">
+        <div class="card-number">Option 4</div>
+        <h2 class="card-title">Modern Dashboard</h2>
+        <div class="card-preview" style="background: linear-gradient(135deg, #06B6D4 0%, #A855F7 100%); position: relative;">
+          <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.1) 40px, rgba(255,255,255,0.1) 41px); opacity: 0.3;"></div>
+        </div>
+        <p class="card-desc">Sophisticated data-driven design with glassmorphism and neon accents for tech enthusiasts.</p>
+        <div class="card-tags">
+          <span class="tag">Tech</span>
+          <span class="tag">Glassmorphism</span>
+          <span class="tag">Data-Focused</span>
+          <span class="tag">Dark Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 5. Mountain Recovery -->
+      <a href="mockup-5-mountain-recovery.html" class="card">
+        <div class="recommendation">🏔️ Recommended</div>
+        <div class="card-number">Option 5</div>
+        <h2 class="card-title">Mountain Recovery</h2>
+        <div class="card-preview" style="background: linear-gradient(180deg, #87CEEB 0%, #0EA5E9 50%, #059669 100%);"></div>
+        <p class="card-desc">Adventure-inspired design with outdoor themes perfect for snowboard recovery goals.</p>
+        <div class="card-tags">
+          <span class="tag">Outdoor</span>
+          <span class="tag">Inspiring</span>
+          <span class="tag">Goal-Oriented</span>
+          <span class="tag">Light Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 6. Minimal Focus -->
+      <a href="mockup-6-minimal-focus.html" class="card">
+        <div class="card-number">Option 6</div>
+        <h2 class="card-title">Minimal Focus</h2>
+        <div class="card-preview" style="background: #FFFFFF; border: 4px solid #000000;">
+          <div style="background: #000000; height: 30%; width: 100%;"></div>
+        </div>
+        <p class="card-desc">Brutalist black and white design with zero distractions for maximum focus and clarity.</p>
+        <div class="card-tags">
+          <span class="tag">Minimal</span>
+          <span class="tag">Brutalist</span>
+          <span class="tag">B&W</span>
+          <span class="tag">High Contrast</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- 7. Performance Tech (HYBRID) -->
+      <a href="mockup-7-performance-tech.html" class="card">
+        <div class="recommendation" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); color: #A855F7;">⚡ HYBRID: Option 2 + 4</div>
+        <div class="card-number">Option 7</div>
+        <h2 class="card-title">Performance Tech</h2>
+        <div class="card-preview" style="background: linear-gradient(135deg, #3B82F6 0%, #F97316 50%, #A855F7 100%); position: relative;">
+          <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.1) 30px, rgba(255,255,255,0.1) 31px); opacity: 0.3;"></div>
+        </div>
+        <p class="card-desc">Perfect fusion of Athletic Performance (#2) and Modern Dashboard (#4) - bold gradients meet glassmorphism and tech aesthetics.</p>
+        <div class="card-tags">
+          <span class="tag">Hybrid</span>
+          <span class="tag">Athletic + Tech</span>
+          <span class="tag">Glassmorphism</span>
+          <span class="tag">Dark Mode</span>
+        </div>
+        <div class="btn">
+          View Mockup <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top: 4rem; padding: 2rem; background: rgba(96, 165, 250, 0.1); border: 2px solid rgba(96, 165, 250, 0.2); border-radius: 20px; text-align: center;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Need Help Choosing?</h3>
+      <p style="color: #94A3B8; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+        <strong style="color: #A855F7;">⚡ Performance Tech (HYBRID)</strong> combines athletic energy with tech sophistication - best of both worlds!<br>
+        <strong style="color: #60A5FA;">Athletic Performance</strong> is great for motivating, energetic vibes.<br>
+        <strong style="color: #0EA5E9;">Mountain Recovery</strong> is perfect if you want snowboard-themed inspiration.<br>
+        <strong style="color: #14B8A6;">Clinical Wellness</strong> is best for a professional, medical feel.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
