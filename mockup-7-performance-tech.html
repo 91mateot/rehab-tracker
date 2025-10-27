@@ -9,14 +9,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0A0E14;
-      color: #E8EBF0;
+      background: #0D1117;
+      color: #E6EDF3;
       line-height: 1.6;
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
     }
-    /* Animated gradient background - more subtle */
+    /* Animated gradient background - masculine industrial */
     body::before {
       content: '';
       position: fixed;
@@ -24,9 +24,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(100, 116, 139, 0.08) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(184, 149, 106, 0.08) 0%, transparent 50%),
-                  radial-gradient(circle at 40% 80%, rgba(147, 165, 177, 0.06) 0%, transparent 50%);
+      background: radial-gradient(circle at 20% 50%, rgba(52, 71, 103, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 80%, rgba(88, 96, 105, 0.08) 0%, transparent 50%);
       animation: gradientShift 15s ease infinite;
       pointer-events: none;
       z-index: 0;
@@ -35,7 +35,7 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
-    /* Tech grid overlay - more subtle */
+    /* Tech grid overlay - industrial */
     .grid-overlay {
       position: fixed;
       top: 0;
@@ -43,8 +43,8 @@
       right: 0;
       bottom: 0;
       background-image:
-        linear-gradient(rgba(100, 116, 139, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 116, 139, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(88, 96, 105, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88, 96, 105, 0.04) 1px, transparent 1px);
       background-size: 50px 50px;
       pointer-events: none;
       z-index: 0;
@@ -53,21 +53,21 @@
 
     /* Glassmorphism header */
     .header {
-      background: rgba(20, 25, 35, 0.6);
+      background: rgba(22, 27, 34, 0.7);
       backdrop-filter: blur(20px) saturate(150%);
-      border: 1px solid rgba(100, 116, 139, 0.2);
+      border: 1px solid rgba(88, 96, 105, 0.25);
       padding: 1.5rem 2rem;
       margin-bottom: 2rem;
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
     .header .logo {
       font-size: 1.75rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #B87333 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: flex;
@@ -88,14 +88,14 @@
       align-items: flex-end;
     }
     .header-stat-value {
-      background: linear-gradient(135deg, #93A5B1 0%, #B8A4C9 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #586069 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 1.5rem;
       font-weight: 900;
     }
     .header-stat-label {
-      color: #64748B;
+      color: #7D8590;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -103,16 +103,16 @@
 
     /* Theme info with glass + subtle gradient */
     .theme-info {
-      background: linear-gradient(135deg, rgba(100, 116, 139, 0.08) 0%, rgba(184, 149, 106, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(52, 71, 103, 0.1) 0%, rgba(184, 115, 51, 0.08) 100%);
       backdrop-filter: blur(40px) saturate(150%);
-      border: 2px solid rgba(100, 116, 139, 0.2);
+      border: 2px solid rgba(88, 96, 105, 0.25);
       padding: 4rem 3rem;
       border-radius: 24px;
       margin-bottom: 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
     .theme-info::before {
       content: '';
@@ -121,7 +121,7 @@
       right: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(from 0deg, transparent, rgba(100, 116, 139, 0.1), transparent 30%);
+      background: conic-gradient(from 0deg, transparent, rgba(88, 96, 105, 0.12), transparent 30%);
       animation: rotate 10s linear infinite;
     }
     @keyframes rotate {
@@ -135,7 +135,7 @@
       letter-spacing: 3px;
       position: relative;
       z-index: 1;
-      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 50%, #B8A4C9 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #B87333 50%, #586069 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -145,7 +145,7 @@
       z-index: 1;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #8B92A6;
+      color: #8B949E;
     }
 
     .palette {
@@ -174,17 +174,17 @@
       inset: 0;
       background: linear-gradient(135deg, transparent, rgba(255,255,255,0.08));
     }
-    .palette-item small { font-size: 0.85rem; color: #64748B; font-weight: 700; font-family: monospace; }
+    .palette-item small { font-size: 0.85rem; color: #7D8590; font-weight: 700; font-family: monospace; }
 
     /* Glass sections */
     .section {
-      background: rgba(20, 25, 35, 0.5);
+      background: rgba(22, 27, 34, 0.6);
       backdrop-filter: blur(20px) saturate(150%);
-      border: 1px solid rgba(100, 116, 139, 0.15);
+      border: 1px solid rgba(88, 96, 105, 0.2);
       padding: 2.5rem;
       border-radius: 24px;
       margin-bottom: 2rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
     .section h2 {
       font-size: 2rem;
@@ -192,7 +192,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
-      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #B87333 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -204,9 +204,9 @@
       gap: 1.5rem;
     }
     .card {
-      background: linear-gradient(135deg, rgba(100, 116, 139, 0.08) 0%, rgba(184, 149, 106, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(52, 71, 103, 0.1) 0%, rgba(184, 115, 51, 0.08) 100%);
       backdrop-filter: blur(20px) saturate(150%);
-      border: 2px solid rgba(100, 116, 139, 0.2);
+      border: 2px solid rgba(88, 96, 105, 0.25);
       padding: 2rem;
       border-radius: 20px;
       position: relative;
@@ -220,15 +220,15 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #93A5B1 0%, #B8956A 100%);
+      background: linear-gradient(90deg, #4A5D7C 0%, #B87333 100%);
     }
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(100, 116, 139, 0.2);
-      border-color: rgba(147, 165, 177, 0.4);
+      box-shadow: 0 25px 60px rgba(74, 93, 124, 0.25);
+      border-color: rgba(88, 96, 105, 0.45);
     }
     .card h3 {
-      color: #93A5B1;
+      color: #7D8590;
       font-size: 0.875rem;
       margin-bottom: 1.5rem;
       font-weight: 800;
@@ -238,7 +238,7 @@
     .metric {
       font-size: 4rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #B87333 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -246,7 +246,7 @@
     }
     .metric-label {
       font-size: 0.875rem;
-      color: #64748B;
+      color: #7D8590;
       margin-top: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -257,8 +257,8 @@
       font-size: 0.875rem;
       font-weight: 700;
     }
-    .metric-change.positive { color: #7FA89B; }
-    .metric-change.neutral { color: #93A5B1; }
+    .metric-change.positive { color: #6B8E76; }
+    .metric-change.neutral { color: #4A5D7C; }
 
     /* Buttons with subtle gradient + glass */
     .btn {
@@ -284,24 +284,24 @@
     }
     .btn:hover::before { opacity: 1; }
     .btn-primary {
-      background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);
+      background: linear-gradient(135deg, #4A5D7C 0%, #344767 100%);
       color: white;
-      border-color: #93A5B1;
-      box-shadow: 0 10px 40px rgba(147, 165, 177, 0.2);
+      border-color: #4A5D7C;
+      box-shadow: 0 10px 40px rgba(74, 93, 124, 0.25);
     }
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 50px rgba(147, 165, 177, 0.3);
+      box-shadow: 0 15px 50px rgba(74, 93, 124, 0.35);
     }
     .btn-secondary {
-      background: linear-gradient(135deg, #B8956A 0%, #A8875A 100%);
+      background: linear-gradient(135deg, #B87333 0%, #A86628 100%);
       color: white;
-      border-color: #B8956A;
-      box-shadow: 0 10px 40px rgba(184, 149, 106, 0.2);
+      border-color: #B87333;
+      box-shadow: 0 10px 40px rgba(184, 115, 51, 0.25);
     }
     .btn-secondary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 50px rgba(184, 149, 106, 0.3);
+      box-shadow: 0 15px 50px rgba(184, 115, 51, 0.35);
     }
 
     .form-group {
@@ -311,7 +311,7 @@
       display: block;
       margin-bottom: 0.75rem;
       font-weight: 800;
-      color: #C8CFD9;
+      color: #C9D1D9;
       font-size: 0.875rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -319,37 +319,37 @@
     .form-control {
       width: 100%;
       padding: 1.125rem;
-      border: 2px solid rgba(100, 116, 139, 0.2);
+      border: 2px solid rgba(88, 96, 105, 0.25);
       border-radius: 14px;
       font-size: 1rem;
-      background: rgba(20, 25, 35, 0.8);
+      background: rgba(22, 27, 34, 0.8);
       backdrop-filter: blur(10px);
-      color: #E8EBF0;
+      color: #E6EDF3;
       font-weight: 600;
     }
     .form-control:focus {
       outline: none;
-      border-color: #93A5B1;
-      box-shadow: 0 0 0 4px rgba(147, 165, 177, 0.1);
-      background: rgba(20, 25, 35, 0.9);
+      border-color: #4A5D7C;
+      box-shadow: 0 0 0 4px rgba(74, 93, 124, 0.15);
+      background: rgba(22, 27, 34, 0.9);
     }
 
     /* Progress bars with subtle gradient + glow */
     .progress-bar {
-      background: rgba(20, 25, 35, 0.8);
+      background: rgba(22, 27, 34, 0.8);
       height: 20px;
       border-radius: 10px;
       overflow: hidden;
       margin: 1.5rem 0;
-      border: 2px solid rgba(100, 116, 139, 0.2);
+      border: 2px solid rgba(88, 96, 105, 0.25);
       position: relative;
     }
     .progress-fill {
       height: 100%;
       border-radius: 8px;
       transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-      background: linear-gradient(90deg, #93A5B1 0%, #B8956A 100%);
-      box-shadow: 0 0 20px rgba(147, 165, 177, 0.3);
+      background: linear-gradient(90deg, #4A5D7C 0%, #B87333 100%);
+      box-shadow: 0 0 20px rgba(74, 93, 124, 0.35);
       position: relative;
       overflow: hidden;
     }
@@ -376,16 +376,16 @@
       border: 2px solid;
     }
     .badge-success {
-      background: linear-gradient(135deg, #7FA89B 0%, #6B9489 100%);
+      background: linear-gradient(135deg, #6B8E76 0%, #5A7D65 100%);
       color: white;
-      border-color: #7FA89B;
-      box-shadow: 0 4px 20px rgba(127, 168, 155, 0.2);
+      border-color: #6B8E76;
+      box-shadow: 0 4px 20px rgba(107, 142, 118, 0.25);
     }
     .badge-info {
-      background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);
+      background: linear-gradient(135deg, #586069 0%, #484F59 100%);
       color: white;
-      border-color: #93A5B1;
-      box-shadow: 0 4px 20px rgba(147, 165, 177, 0.2);
+      border-color: #586069;
+      box-shadow: 0 4px 20px rgba(88, 96, 105, 0.25);
     }
 
     /* Activity rows with glass */
@@ -394,17 +394,17 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.75rem;
-      background: rgba(100, 116, 139, 0.05);
+      background: rgba(52, 71, 103, 0.06);
       backdrop-filter: blur(10px);
       border-radius: 16px;
-      border: 1px solid rgba(100, 116, 139, 0.15);
+      border: 1px solid rgba(88, 96, 105, 0.2);
       margin-bottom: 1rem;
       transition: all 0.3s;
     }
     .activity-row:hover {
-      border-color: rgba(147, 165, 177, 0.3);
+      border-color: rgba(88, 96, 105, 0.4);
       transform: translateX(8px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -431,36 +431,36 @@
 
     <div class="theme-info">
       <h1>PERFORMANCE TECH</h1>
-      <p>REFINED • SOPHISTICATED • POWERFUL</p>
+      <p>INDUSTRIAL • TACTICAL • POWERFUL</p>
     </div>
 
     <div class="section">
-      <h2>Subtle Color System</h2>
+      <h2>Industrial Color System</h2>
       <div class="palette">
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);"></div>
-          <strong style="color: #93A5B1;">Slate Blue</strong><br>
-          <small>#93A5B1</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #4A5D7C 0%, #344767 100%);"></div>
+          <strong style="color: #4A5D7C;">Steel Blue</strong><br>
+          <small>#4A5D7C</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #B8956A 0%, #A8875A 100%);"></div>
-          <strong style="color: #B8956A;">Soft Bronze</strong><br>
-          <small>#B8956A</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #B87333 0%, #A86628 100%);"></div>
+          <strong style="color: #B87333;">Industrial Copper</strong><br>
+          <small>#B87333</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #B8A4C9 0%, #A892B5 100%);"></div>
-          <strong style="color: #B8A4C9;">Dusty Lavender</strong><br>
-          <small>#B8A4C9</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #586069 0%, #484F59 100%);"></div>
+          <strong style="color: #586069;">Gunmetal</strong><br>
+          <small>#586069</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #7FA89B 0%, #6B9489 100%);"></div>
-          <strong style="color: #7FA89B;">Sage Green</strong><br>
-          <small>#7FA89B</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #6B8E76 0%, #5A7D65 100%);"></div>
+          <strong style="color: #6B8E76;">Tactical Green</strong><br>
+          <small>#6B8E76</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #0A0E14 0%, #1A1F2E 100%); border-color: #64748B;"></div>
-          <strong style="color: #8B92A6;">Deep Charcoal</strong><br>
-          <small>#0A0E14</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #0D1117 0%, #161B22 100%); border-color: #586069;"></div>
+          <strong style="color: #7D8590;">Iron Black</strong><br>
+          <small>#0D1117</small>
         </div>
       </div>
     </div>
@@ -537,7 +537,7 @@
         <div class="activity-row">
           <div>
             <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">🔥 STRENGTH • Lower Body Power</strong>
-            <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
+            <div style="color: #7D8590; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-25 18:42 • DURATION: 45:00 • PAIN: 2/10 • LOAD: 85%
             </div>
           </div>
@@ -546,7 +546,7 @@
         <div class="activity-row">
           <div>
             <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">💪 MOBILITY • Core Stability</strong>
-            <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
+            <div style="color: #7D8590; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-24 07:15 • DURATION: 30:00 • PAIN: 1/10 • LOAD: 100%
             </div>
           </div>
@@ -555,7 +555,7 @@
         <div class="activity-row">
           <div>
             <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">⚡ POWER • Balance & Explosiveness</strong>
-            <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
+            <div style="color: #7D8590; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-23 19:30 • DURATION: 40:00 • PAIN: 3/10 • LOAD: 90%
             </div>
           </div>
@@ -564,22 +564,22 @@
       </div>
     </div>
 
-    <div class="section" style="text-align: center; border: 2px solid rgba(100, 116, 139, 0.25);">
-      <h3 style="background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; font-size: 2rem; font-weight: 900; letter-spacing: 2px;">REFINED • POWERFUL • SOPHISTICATED</h3>
-      <p style="color: #8B92A6; max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 1.05rem; font-weight: 600;">
-        A more <strong style="color: #B8956A;">subtle and refined</strong> approach to the hybrid design.
-        Muted slate blues, soft bronze, and dusty lavender create a <strong style="color: #93A5B1;">sophisticated aesthetic</strong>
-        that's professional yet still maintains the glassmorphism and tech-driven feel.
-        Perfect for those who want elegance with performance tracking.
+    <div class="section" style="text-align: center; border: 2px solid rgba(88, 96, 105, 0.3);">
+      <h3 style="background: linear-gradient(135deg, #4A5D7C 0%, #B87333 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; font-size: 2rem; font-weight: 900; letter-spacing: 2px;">INDUSTRIAL • TACTICAL • DOMINANT</h3>
+      <p style="color: #8B949E; max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 1.05rem; font-weight: 600;">
+        A <strong style="color: #B87333;">masculine, industrial-strength</strong> color palette inspired by steel, copper, and tactical gear.
+        Deep steel blues, industrial copper, and gunmetal grays create a <strong style="color: #4A5D7C;">powerful aesthetic</strong>
+        that's rugged yet sophisticated. Glassmorphism meets industrial design.
+        Built for serious performance tracking with a commanding presence.
       </p>
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <div style="background: rgba(147, 165, 177, 0.1); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(147, 165, 177, 0.2);">
-          <strong style="color: #93A5B1;">SUBTLE TONES</strong><br>
-          <small style="color: #8B92A6;">Muted • Refined • Professional</small>
+        <div style="background: rgba(74, 93, 124, 0.12); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(74, 93, 124, 0.25);">
+          <strong style="color: #4A5D7C;">STEEL CORE</strong><br>
+          <small style="color: #8B949E;">Industrial • Strong • Tactical</small>
         </div>
-        <div style="background: rgba(184, 149, 106, 0.1); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(184, 149, 106, 0.2);">
-          <strong style="color: #B8956A;">ELEGANT</strong><br>
-          <small style="color: #8B92A6;">Sophisticated • Timeless • Mature</small>
+        <div style="background: rgba(184, 115, 51, 0.1); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(184, 115, 51, 0.25);">
+          <strong style="color: #B87333;">COPPER EDGE</strong><br>
+          <small style="color: #8B949E;">Metallic • Rugged • Powerful</small>
         </div>
       </div>
     </div>
