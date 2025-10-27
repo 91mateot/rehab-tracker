@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Performance Tech - Rehab Tracker Hybrid Mockup</title>
+  <title>Performance Tech (Subtle) - Rehab Tracker Hybrid Mockup</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #000000;
-      color: #FFFFFF;
+      background: #0A0E14;
+      color: #E8EBF0;
       line-height: 1.6;
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
     }
-    /* Animated gradient background */
+    /* Animated gradient background - more subtle */
     body::before {
       content: '';
       position: fixed;
@@ -24,18 +24,18 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.2) 0%, transparent 50%),
-                  radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+      background: radial-gradient(circle at 20% 50%, rgba(100, 116, 139, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(184, 149, 106, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 80%, rgba(147, 165, 177, 0.06) 0%, transparent 50%);
       animation: gradientShift 15s ease infinite;
       pointer-events: none;
       z-index: 0;
     }
     @keyframes gradientShift {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+      50% { opacity: 0.6; }
     }
-    /* Tech grid overlay */
+    /* Tech grid overlay - more subtle */
     .grid-overlay {
       position: fixed;
       top: 0;
@@ -43,8 +43,8 @@
       right: 0;
       bottom: 0;
       background-image:
-        linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(100, 116, 139, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.03) 1px, transparent 1px);
       background-size: 50px 50px;
       pointer-events: none;
       z-index: 0;
@@ -53,21 +53,21 @@
 
     /* Glassmorphism header */
     .header {
-      background: rgba(15, 15, 15, 0.6);
-      backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      background: rgba(20, 25, 35, 0.6);
+      backdrop-filter: blur(20px) saturate(150%);
+      border: 1px solid rgba(100, 116, 139, 0.2);
       padding: 1.5rem 2rem;
       margin-bottom: 2rem;
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
     .header .logo {
       font-size: 1.75rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: flex;
@@ -88,7 +88,7 @@
       align-items: flex-end;
     }
     .header-stat-value {
-      background: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #B8A4C9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 1.5rem;
@@ -101,18 +101,18 @@
       letter-spacing: 1px;
     }
 
-    /* Theme info with glass + gradient */
+    /* Theme info with glass + subtle gradient */
     .theme-info {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(249, 115, 22, 0.15) 100%);
-      backdrop-filter: blur(40px) saturate(180%);
-      border: 2px solid rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(100, 116, 139, 0.08) 0%, rgba(184, 149, 106, 0.08) 100%);
+      backdrop-filter: blur(40px) saturate(150%);
+      border: 2px solid rgba(100, 116, 139, 0.2);
       padding: 4rem 3rem;
       border-radius: 24px;
       margin-bottom: 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
     .theme-info::before {
       content: '';
@@ -121,7 +121,7 @@
       right: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.2), transparent 30%);
+      background: conic-gradient(from 0deg, transparent, rgba(100, 116, 139, 0.1), transparent 30%);
       animation: rotate 10s linear infinite;
     }
     @keyframes rotate {
@@ -135,7 +135,7 @@
       letter-spacing: 3px;
       position: relative;
       z-index: 1;
-      background: linear-gradient(135deg, #60A5FA 0%, #FB923C 50%, #A78BFA 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 50%, #B8A4C9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -145,7 +145,7 @@
       z-index: 1;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #94A3B8;
+      color: #8B92A6;
     }
 
     .palette {
@@ -163,24 +163,24 @@
       height: 120px;
       border-radius: 16px;
       margin-bottom: 0.75rem;
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.08);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     }
     .palette-color::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15));
+      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.08));
     }
     .palette-item small { font-size: 0.85rem; color: #64748B; font-weight: 700; font-family: monospace; }
 
     /* Glass sections */
     .section {
-      background: rgba(15, 15, 15, 0.5);
-      backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      background: rgba(20, 25, 35, 0.5);
+      backdrop-filter: blur(20px) saturate(150%);
+      border: 1px solid rgba(100, 116, 139, 0.15);
       padding: 2.5rem;
       border-radius: 24px;
       margin-bottom: 2rem;
@@ -192,21 +192,21 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
-      background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Performance cards with glass + gradient */
+    /* Performance cards with glass + subtle gradient */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
     .card {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
-      backdrop-filter: blur(20px) saturate(180%);
-      border: 2px solid rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(100, 116, 139, 0.08) 0%, rgba(184, 149, 106, 0.08) 100%);
+      backdrop-filter: blur(20px) saturate(150%);
+      border: 2px solid rgba(100, 116, 139, 0.2);
       padding: 2rem;
       border-radius: 20px;
       position: relative;
@@ -219,16 +219,16 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #3B82F6 0%, #F97316 100%);
+      height: 3px;
+      background: linear-gradient(90deg, #93A5B1 0%, #B8956A 100%);
     }
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
-      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 25px 60px rgba(100, 116, 139, 0.2);
+      border-color: rgba(147, 165, 177, 0.4);
     }
     .card h3 {
-      color: #3B82F6;
+      color: #93A5B1;
       font-size: 0.875rem;
       margin-bottom: 1.5rem;
       font-weight: 800;
@@ -238,7 +238,7 @@
     .metric {
       font-size: 4rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #60A5FA 0%, #FB923C 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -257,10 +257,10 @@
       font-size: 0.875rem;
       font-weight: 700;
     }
-    .metric-change.positive { color: #22C55E; }
-    .metric-change.neutral { color: #3B82F6; }
+    .metric-change.positive { color: #7FA89B; }
+    .metric-change.neutral { color: #93A5B1; }
 
-    /* Buttons with athletic gradient + glass */
+    /* Buttons with subtle gradient + glass */
     .btn {
       padding: 1rem 2.5rem;
       border-radius: 14px;
@@ -278,30 +278,30 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .btn:hover::before { opacity: 1; }
     .btn-primary {
-      background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);
       color: white;
-      border-color: #3B82F6;
-      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+      border-color: #93A5B1;
+      box-shadow: 0 10px 40px rgba(147, 165, 177, 0.2);
     }
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 50px rgba(59, 130, 246, 0.6);
+      box-shadow: 0 15px 50px rgba(147, 165, 177, 0.3);
     }
     .btn-secondary {
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      background: linear-gradient(135deg, #B8956A 0%, #A8875A 100%);
       color: white;
-      border-color: #F97316;
-      box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
+      border-color: #B8956A;
+      box-shadow: 0 10px 40px rgba(184, 149, 106, 0.2);
     }
     .btn-secondary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 50px rgba(249, 115, 22, 0.6);
+      box-shadow: 0 15px 50px rgba(184, 149, 106, 0.3);
     }
 
     .form-group {
@@ -311,7 +311,7 @@
       display: block;
       margin-bottom: 0.75rem;
       font-weight: 800;
-      color: #E2E8F0;
+      color: #C8CFD9;
       font-size: 0.875rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -319,37 +319,37 @@
     .form-control {
       width: 100%;
       padding: 1.125rem;
-      border: 2px solid rgba(59, 130, 246, 0.3);
+      border: 2px solid rgba(100, 116, 139, 0.2);
       border-radius: 14px;
       font-size: 1rem;
-      background: rgba(15, 15, 15, 0.8);
+      background: rgba(20, 25, 35, 0.8);
       backdrop-filter: blur(10px);
-      color: #FFFFFF;
+      color: #E8EBF0;
       font-weight: 600;
     }
     .form-control:focus {
       outline: none;
-      border-color: #3B82F6;
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
-      background: rgba(15, 15, 15, 0.9);
+      border-color: #93A5B1;
+      box-shadow: 0 0 0 4px rgba(147, 165, 177, 0.1);
+      background: rgba(20, 25, 35, 0.9);
     }
 
-    /* Progress bars with gradient + glow */
+    /* Progress bars with subtle gradient + glow */
     .progress-bar {
-      background: rgba(15, 15, 15, 0.8);
+      background: rgba(20, 25, 35, 0.8);
       height: 20px;
       border-radius: 10px;
       overflow: hidden;
       margin: 1.5rem 0;
-      border: 2px solid rgba(59, 130, 246, 0.3);
+      border: 2px solid rgba(100, 116, 139, 0.2);
       position: relative;
     }
     .progress-fill {
       height: 100%;
       border-radius: 8px;
       transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-      background: linear-gradient(90deg, #3B82F6 0%, #F97316 100%);
-      box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+      background: linear-gradient(90deg, #93A5B1 0%, #B8956A 100%);
+      box-shadow: 0 0 20px rgba(147, 165, 177, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -357,7 +357,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
       animation: shimmer 2s infinite;
     }
     @keyframes shimmer {
@@ -376,16 +376,16 @@
       border: 2px solid;
     }
     .badge-success {
-      background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+      background: linear-gradient(135deg, #7FA89B 0%, #6B9489 100%);
       color: white;
-      border-color: #22C55E;
-      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+      border-color: #7FA89B;
+      box-shadow: 0 4px 20px rgba(127, 168, 155, 0.2);
     }
     .badge-info {
-      background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+      background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);
       color: white;
-      border-color: #3B82F6;
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+      border-color: #93A5B1;
+      box-shadow: 0 4px 20px rgba(147, 165, 177, 0.2);
     }
 
     /* Activity rows with glass */
@@ -394,17 +394,17 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.75rem;
-      background: rgba(59, 130, 246, 0.08);
+      background: rgba(100, 116, 139, 0.05);
       backdrop-filter: blur(10px);
       border-radius: 16px;
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      border: 1px solid rgba(100, 116, 139, 0.15);
       margin-bottom: 1rem;
       transition: all 0.3s;
     }
     .activity-row:hover {
-      border-color: rgba(59, 130, 246, 0.5);
+      border-color: rgba(147, 165, 177, 0.3);
       transform: translateX(8px);
-      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -431,36 +431,36 @@
 
     <div class="theme-info">
       <h1>PERFORMANCE TECH</h1>
-      <p>ATHLETIC ENERGY • DATA-DRIVEN • CUTTING EDGE</p>
+      <p>REFINED • SOPHISTICATED • POWERFUL</p>
     </div>
 
     <div class="section">
-      <h2>Hybrid Color System</h2>
+      <h2>Subtle Color System</h2>
       <div class="palette">
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);"></div>
-          <strong style="color: #3B82F6;">Electric Blue</strong><br>
-          <small>#3B82F6</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #93A5B1 0%, #7C8DB0 100%);"></div>
+          <strong style="color: #93A5B1;">Slate Blue</strong><br>
+          <small>#93A5B1</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);"></div>
-          <strong style="color: #F97316;">Energy Orange</strong><br>
-          <small>#F97316</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #B8956A 0%, #A8875A 100%);"></div>
+          <strong style="color: #B8956A;">Soft Bronze</strong><br>
+          <small>#B8956A</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #A855F7 0%, #9333EA 100%);"></div>
-          <strong style="color: #A855F7;">Tech Purple</strong><br>
-          <small>#A855F7</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #B8A4C9 0%, #A892B5 100%);"></div>
+          <strong style="color: #B8A4C9;">Dusty Lavender</strong><br>
+          <small>#B8A4C9</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);"></div>
-          <strong style="color: #22C55E;">Performance Green</strong><br>
-          <small>#22C55E</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #7FA89B 0%, #6B9489 100%);"></div>
+          <strong style="color: #7FA89B;">Sage Green</strong><br>
+          <small>#7FA89B</small>
         </div>
         <div class="palette-item">
-          <div class="palette-color" style="background: linear-gradient(135deg, #000000 0%, #1F2937 100%); border-color: #3B82F6;"></div>
-          <strong style="color: #94A3B8;">Deep Black</strong><br>
-          <small>#000000</small>
+          <div class="palette-color" style="background: linear-gradient(135deg, #0A0E14 0%, #1A1F2E 100%); border-color: #64748B;"></div>
+          <strong style="color: #8B92A6;">Deep Charcoal</strong><br>
+          <small>#0A0E14</small>
         </div>
       </div>
     </div>
@@ -536,16 +536,16 @@
       <div>
         <div class="activity-row">
           <div>
-            <strong style="font-size: 1.15rem; font-weight: 900;">🔥 STRENGTH • Lower Body Power</strong>
+            <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">🔥 STRENGTH • Lower Body Power</strong>
             <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-25 18:42 • DURATION: 45:00 • PAIN: 2/10 • LOAD: 85%
             </div>
           </div>
-          <span class="badge badge-success">CRUSHED</span>
+          <span class="badge badge-success">COMPLETE</span>
         </div>
         <div class="activity-row">
           <div>
-            <strong style="font-size: 1.15rem; font-weight: 900;">💪 MOBILITY • Core Stability</strong>
+            <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">💪 MOBILITY • Core Stability</strong>
             <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-24 07:15 • DURATION: 30:00 • PAIN: 1/10 • LOAD: 100%
             </div>
@@ -554,7 +554,7 @@
         </div>
         <div class="activity-row">
           <div>
-            <strong style="font-size: 1.15rem; font-weight: 900;">⚡ POWER • Balance & Explosiveness</strong>
+            <strong style="font-size: 1.15rem; font-weight: 900; color: #C8CFD9;">⚡ POWER • Balance & Explosiveness</strong>
             <div style="color: #64748B; font-size: 0.9rem; margin-top: 0.5rem; font-weight: 700;">
               2025-10-23 19:30 • DURATION: 40:00 • PAIN: 3/10 • LOAD: 90%
             </div>
@@ -564,21 +564,22 @@
       </div>
     </div>
 
-    <div class="section" style="text-align: center; border: 2px solid rgba(59, 130, 246, 0.4);">
-      <h3 style="background: linear-gradient(135deg, #3B82F6 0%, #F97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; font-size: 2rem; font-weight: 900; letter-spacing: 2px;">PERFORMANCE • TECH • POWER</h3>
-      <p style="color: #94A3B8; max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 1.05rem; font-weight: 600;">
-        The perfect fusion of <strong style="color: #F97316;">athletic motivation</strong> and <strong style="color: #3B82F6;">data-driven precision</strong>.
-        Bold gradients meet glassmorphism. High-energy training meets cutting-edge analytics.
-        Grid overlays and neon accents create a futuristic training command center that pushes you to peak performance.
+    <div class="section" style="text-align: center; border: 2px solid rgba(100, 116, 139, 0.25);">
+      <h3 style="background: linear-gradient(135deg, #93A5B1 0%, #B8956A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; font-size: 2rem; font-weight: 900; letter-spacing: 2px;">REFINED • POWERFUL • SOPHISTICATED</h3>
+      <p style="color: #8B92A6; max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 1.05rem; font-weight: 600;">
+        A more <strong style="color: #B8956A;">subtle and refined</strong> approach to the hybrid design.
+        Muted slate blues, soft bronze, and dusty lavender create a <strong style="color: #93A5B1;">sophisticated aesthetic</strong>
+        that's professional yet still maintains the glassmorphism and tech-driven feel.
+        Perfect for those who want elegance with performance tracking.
       </p>
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <div style="background: rgba(59, 130, 246, 0.15); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.3);">
-          <strong style="color: #3B82F6;">FROM ATHLETIC</strong><br>
-          <small style="color: #94A3B8;">Bold Gradients • Energy • Motivation</small>
+        <div style="background: rgba(147, 165, 177, 0.1); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(147, 165, 177, 0.2);">
+          <strong style="color: #93A5B1;">SUBTLE TONES</strong><br>
+          <small style="color: #8B92A6;">Muted • Refined • Professional</small>
         </div>
-        <div style="background: rgba(168, 85, 247, 0.15); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.3);">
-          <strong style="color: #A855F7;">FROM MODERN</strong><br>
-          <small style="color: #94A3B8;">Glassmorphism • Tech Grid • Data</small>
+        <div style="background: rgba(184, 149, 106, 0.1); padding: 1rem 2rem; border-radius: 12px; border: 1px solid rgba(184, 149, 106, 0.2);">
+          <strong style="color: #B8956A;">ELEGANT</strong><br>
+          <small style="color: #8B92A6;">Sophisticated • Timeless • Mature</small>
         </div>
       </div>
     </div>
